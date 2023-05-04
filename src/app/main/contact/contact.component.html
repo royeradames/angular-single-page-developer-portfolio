@@ -2,36 +2,37 @@
   <h1>Contact</h1>
   <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <section>
       <label for="name">Name</label>
-      <input type="text" id="name" formControlName="name" class="form-control">
-      <div *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].dirty || contactForm.controls['name'].touched)" class="alert alert-danger">
-        <div *ngIf="contactForm.controls['name'].errors.required">
+      <input type="text" id="name" formControlName="name" class="...">
+      <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)" class="...">
+        <div *ngIf="contactForm.controls.name.errors.required">
           Name is required.
         </div>
       </div>
-    </div>
-    <div class="form-group">
+    </section>
+    <section>
       <label for="email">Email</label>
-      <input type="email" id="email" formControlName="email" class="form-control">
-      <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)" class="alert alert-danger">
-        <div *ngIf="contactForm.controls['email'].errors.required">
+      <input type="email" id="email" formControlName="email" class="...">
+      <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)" class="...">
+        <div *ngIf="contactForm.controls.email.errors.required">
           Email is required.
         </div>
-        <div *ngIf="contactForm.controls['email'].errors.email">
+        <div *ngIf="contactForm.controls.email.errors.email">
           Email must be a valid email address.
         </div>
       </div>
-    </div>
-    <div class="form-group">
+    </section>
+    <section>
       <label for="message">Message</label>
-      <textarea id="message" formControlName="message" class="form-control"></textarea>
-      <div *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].dirty || contactForm.controls['message'].touched)" class="alert alert-danger">
-        <div *ngIf="contactForm.controls['message'].errors.required">
+      <textarea id="message" formControlName="message" class="..."></textarea>
+      <div *ngIf="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)" class="...">
+        <div *ngIf="contactForm.controls.message.errors.required">
           Message is required.
         </div>
       </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button
+    </section>
+    <button type="submit" class="...">Submit</button>
+  </form>
 
 </section>

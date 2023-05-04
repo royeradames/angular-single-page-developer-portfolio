@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { isValidKey } from '../../utility/is-valid-key.utility';
 
 export interface ContactFormData {
   name: string;
@@ -17,17 +24,26 @@ type FormGroupControls<T> = {
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  contactForm: FormGroupControls<ContactFormData>;
+  contactForm: FormGroup<FormGroupControls<ContactFormData>>;
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
-    }) as FormGroupControls<ContactFormData>;
+  constructor(private formBuilder: FormBuilder) {
+    this.contactForm = new FormGroup<FormGroupControls<ContactFormData>>({
+      name: new FormControl<string>('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      email: new FormControl<string>('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.email],
+      }),
+      message: new FormControl<string>('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+    });
   }
+
+  ngOnInit(): void {}
 
   onSubmit() {
     if (this.contactForm.valid) {
@@ -35,9 +51,13 @@ export class ContactComponent {
       console.log(this.contactForm.value);
     } else {
       // mark all fields as touched to display validation errors
-      Object.keys(this.contactForm).forEach((field) => {
-        const control = this.contactForm[field];
-        control.markAsTouched({ onlySelf: true });
+      Object.keys(this.contactForm.controls).forEach((field) => {
+        if (isValidKey(field, this.contactForm.controls)) {
+          const control = this.contactForm.get(field);
+          if (control) {
+            control.markAsTouched({ onlySelf: true });
+          }
+        }
       });
     }
   }
