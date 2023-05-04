@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
 import { isValidKey } from '../../utility/is-valid-key.utility';
+import { getControlName } from '../../utility/get-control-name.utility';
 
 export interface ContactFormData {
   name: string;
@@ -15,7 +15,7 @@ export interface ContactFormData {
 }
 
 type FormGroupControls<T> = {
-  [key in keyof T]: AbstractControl;
+  [key in keyof T]: FormControl<T[key]>;
 };
 
 @Component({
@@ -25,6 +25,7 @@ type FormGroupControls<T> = {
 })
 export class ContactComponent {
   contactForm: FormGroup<FormGroupControls<ContactFormData>>;
+  getControlName = getControlName;
 
   constructor(private formBuilder: FormBuilder) {
     this.contactForm = new FormGroup<FormGroupControls<ContactFormData>>({
