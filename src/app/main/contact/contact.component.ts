@@ -2,16 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { isValidKey } from '../../utility/is-valid-key.utility';
 import { getControlName } from '../../utility/get-control-name.utility';
-
-export interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
-export type FormGroupControls<T> = {
-  [key in keyof T]: [T[key], { validators: Validators[]; nonNullable?: true }];
-};
+import { FormGroupControlsInterface } from './model/form-group-controls.interface';
+import { ContactFormDataInterface } from './model/contact-form-data.interface';
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +12,9 @@ export type FormGroupControls<T> = {
 })
 export class ContactComponent {
   fb = inject(FormBuilder);
-  contactForm = this.fb.group<FormGroupControls<ContactFormData>>({
+  contactForm = this.fb.group<
+    FormGroupControlsInterface<ContactFormDataInterface>
+  >({
     name: ['', { validators: [Validators.required], nonNullable: true }],
     email: [
       '',
