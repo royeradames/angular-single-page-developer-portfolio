@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      fontFamily: {
+        "space-grotesk": ["Space Grotesk", "sans-serif"],
+      },
       colors: {
         custom: {
           black: "#151515",
