@@ -1,9 +1,8 @@
 <section class="flex flex-col gap-1 text-center justify-center">
   <h1>adamkeyes</h1>
-  <section class="flex gap-0.5">
-    <img src="assets/svg/icons-github-fill.svg" alt="github">
-    <img src="assets/svg/simple-icons_frontendmentor.svg" alt="frontendmentor">
-    <img src="assets/svg/LinkedIn.svg" alt="LinkedIn">
-    <img src="assets/svg/twitter-icons.svg" alt="twitter">
+  <section class="flex gap-0.5 justify-center">
+    <a *ngFor="let item of icons" [href]="item.href" rel="noopener noreferrer" target="_blank">
+      <img [alt]="item.alt" [src]="item.src">
+    </a>
   </section>
 </section>
