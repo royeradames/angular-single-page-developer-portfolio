@@ -1,17 +1,19 @@
-<section id="projects">
-  <section>
-    <h1>Projects</h1>
+<section id="projects" class="grid gap-10">
+  <section class="flex justify-around">
+    <h1 class="font-normal font-bold text-4xl leading-40 tracking-tighter">Projects</h1>
     <theme-button>CONTACT ME</theme-button>
   </section>
-  <section *ngFor="let item of projects">
+  <section *ngFor="let item of projects" class="grid gap-5">
     <picture>
       <source [srcset]="item.imgSmall" media="(max-width: 768px)">
       <source [srcset]="item.imgLarge" media="(max-width: 1024px)">
       <img [src]="item.imgSmall" [alt]="item.alt">
     </picture>
     <h1>{{item.title}}</h1>
-    <p><span *ngFor="let skill of item.skills">{{skill}}</span></p>
-    <theme-button>VIEW PROJECT</theme-button>
-    <theme-button>VIEW CODE</theme-button>
+    <p class="flex gap-5"><span *ngFor="let skill of item.skills">{{skill}}</span></p>
+    <div class="flex justify-between">
+      <theme-button>VIEW PROJECT</theme-button>
+      <theme-button>VIEW CODE</theme-button>
+    </div>
   </section>
 </section>
