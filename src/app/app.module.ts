@@ -4,11 +4,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from "@angular/service-worker";
-import { SocialLinksComponent } from './social-links/social-links.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { SkillsComponent } from './skills/skills.component';
-import { AboutComponent } from './about/about.component';
+import { SocialLinksComponent } from './main/social-links/social-links.component';
+import { ContactComponent } from './main/contact/contact.component';
+import { ProjectsComponent } from './main/projects/projects.component';
+import { SkillsComponent } from './main/skills/skills.component';
+import { AboutComponent } from './main/about/about.component';
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AboutComponent } from './about/about.component';
     ContactComponent,
     ProjectsComponent,
     SkillsComponent,
-    AboutComponent
+    AboutComponent,
+    HeaderComponent,
+    MainComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
