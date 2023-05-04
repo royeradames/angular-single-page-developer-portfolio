@@ -14,6 +14,7 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ThemeButtonComponent } from './component/theme-button/theme-button.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     MainComponent,
     FooterComponent,
+    ThemeButtonComponent,
   ],
   imports: [
     ReactiveFormsModule,
