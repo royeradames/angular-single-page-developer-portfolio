@@ -1,7 +1,7 @@
 <section id="projects">
   <section>
     <h1>Projects</h1>
-    <button>CONTACT ME</button>
+    <theme-button>CONTACT ME</theme-button>
   </section>
   <section *ngFor="let item of projects">
     <picture>
@@ -11,7 +11,7 @@
     </picture>
     <h1>{{item.title}}</h1>
     <p><span *ngFor="let skill of item.skills">{{skill}}</span></p>
-    <button>View Project</button>
-    <button>View Code</button>
+    <theme-button>VIEW PROJECT</theme-button>
+    <theme-button>VIEW CODE</theme-button>
   </section>
 </section>
