@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { SocialLinksComponent } from './main/social-links/social-links.component';
+import { SocialLinksComponent } from './component/social-links/social-links.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { ProjectsComponent } from './main/projects/projects.component';
 import { SkillsComponent } from './main/skills/skills.component';
