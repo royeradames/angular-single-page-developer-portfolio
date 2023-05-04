@@ -1,6 +1,9 @@
 <div class="bg-custom-black p-5 pb-20">
-  <app-header></app-header>
-  <app-main></app-main>
+  <div class="relative">
+    <app-header class="absolute top-0 left-0 right-0 z-10"></app-header>
+  </div>
+  <div class="relative z-0">
+    <app-main></app-main>
+  </div>
 </div>
 <app-footer></app-footer>
-
