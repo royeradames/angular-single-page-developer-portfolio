@@ -1,10 +1,5 @@
-import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { isValidKey } from '../../utility/is-valid-key.utility';
 import { getControlName } from '../../utility/get-control-name.utility';
 
@@ -14,8 +9,8 @@ export interface ContactFormData {
   message: string;
 }
 
-type FormGroupControls<T> = {
-  [key in keyof T]: FormControl<T[key]>;
+export type FormGroupControls<T> = {
+  [key in keyof T]: [T[key], { validators: Validators[] }];
 };
 
 @Component({
@@ -24,25 +19,13 @@ type FormGroupControls<T> = {
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  contactForm: FormGroup<FormGroupControls<ContactFormData>>;
+  fb = inject(FormBuilder);
+  contactForm = this.fb.group<FormGroupControls<ContactFormData>>({
+    name: ['', { validators: [Validators.required] }],
+    email: ['', { validators: [Validators.required, Validators.email] }],
+    message: ['', { validators: [Validators.required] }],
+  });
   getControlName = getControlName;
-
-  constructor(private formBuilder: FormBuilder) {
-    this.contactForm = new FormGroup<FormGroupControls<ContactFormData>>({
-      name: new FormControl<string>('', {
-        nonNullable: true,
-        validators: [Validators.required],
-      }),
-      email: new FormControl<string>('', {
-        nonNullable: true,
-        validators: [Validators.required, Validators.email],
-      }),
-      message: new FormControl<string>('', {
-        nonNullable: true,
-        validators: [Validators.required],
-      }),
-    });
-  }
 
   ngOnInit(): void {}
 
