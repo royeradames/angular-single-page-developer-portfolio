@@ -1,51 +1,55 @@
-<section id="projects">
-    <h1 >Contact</h1>
-    <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you
+<section id="projects" class="my-20 grid gap-5">
+    <h1 class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter">Contact</h1>
+    <p class="font-normal font-medium text-base leading-26 text-center">I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you
       as
       soon as possible.</p>
-  <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+  <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
     <section>
-      <label for="name">Name</label>
+      <label for="name" class="sr-only">Name</label>
       <input [formControlName]="getControlName(contactForm, contactForm.controls.name)"
-             class="..."
+             class="bg-transparent text-white opacity-50 border-b border-solid border-white w-full focus:outline-none focus:border-opacity-100"
              id="name"
+             placeholder="NAME"
              type="text">
       <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)"
            class="...">
-        <div *ngIf="contactForm.controls.name.errors?.['required']">
+        <p *ngIf="contactForm.controls.name.errors?.['required']">
           Name is required.
-        </div>
+        </p>
       </div>
     </section>
     <section>
-      <label for="email">Email</label>
+      <label for="email" class="sr-only">Email</label>
       <input [formControlName]="getControlName(contactForm,contactForm.controls.email)"
-             class="..."
-             id="email"
+             class="bg-transparent text-white opacity-50 border-b border-solid border-white w-full focus:outline-none focus:border-opacity-100"
+             id="email"placeholder="EMAIL"
              type="email">
       <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
            class="...">
-        <div *ngIf="contactForm.controls.email.errors?.['required']">
+        <p *ngIf="contactForm.controls.email.errors?.['required']">
           Email is required.
-        </div>
-        <div *ngIf="contactForm.controls.email.errors?.['email']">
+        </p>
+        <p *ngIf="contactForm.controls.email.errors?.['email']">
           Email must be a valid email address.
-        </div>
+        </p>
       </div>
     </section>
     <section>
-      <label for="message">Message</label>
+      <label for="message" class="sr-only">Message</label>
       <textarea [formControlName]="getControlName(contactForm,contactForm.controls.message)"
-                class="..."
-                id="message"></textarea>
+                class="bg-transparent text-white opacity-50 border-b border-solid border-white w-full focus:outline-none focus:border-opacity-100 resize-y"
+                id="message"
+                placeholder="MESSAGE"
+                rows="4"
+      ></textarea>
       <div *ngIf="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)"
            class="...">
-        <div *ngIf="contactForm.controls.message.errors?.['required']">
+        <p *ngIf="contactForm.controls.message.errors?.['required']">
           Message is required.
-        </div>
+        </p>
       </div>
     </section>
-    <theme-button class="..." type="submit">SEND MESSAGE</theme-button>
+    <theme-button class="max-w-max justify-self-end" type="submit">SEND MESSAGE</theme-button>
   </form>
 
 </section>
