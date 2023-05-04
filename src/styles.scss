@@ -2,3 +2,16 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+h1,h2, h3, h4, h5, h6, label {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+p{
+  color: #D9D9D9;
+}
+
+label{
+  opacity: 50%;
+}
