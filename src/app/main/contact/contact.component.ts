@@ -10,7 +10,7 @@ export interface ContactFormData {
 }
 
 export type FormGroupControls<T> = {
-  [key in keyof T]: [T[key], { validators: Validators[] }];
+  [key in keyof T]: [T[key], { validators: Validators[]; nonNullable?: true }];
 };
 
 @Component({
@@ -21,9 +21,15 @@ export type FormGroupControls<T> = {
 export class ContactComponent {
   fb = inject(FormBuilder);
   contactForm = this.fb.group<FormGroupControls<ContactFormData>>({
-    name: ['', { validators: [Validators.required] }],
-    email: ['', { validators: [Validators.required, Validators.email] }],
-    message: ['', { validators: [Validators.required] }],
+    name: ['', { validators: [Validators.required], nonNullable: true }],
+    email: [
+      '',
+      {
+        validators: [Validators.required, Validators.email],
+        nonNullable: true,
+      },
+    ],
+    message: ['', { validators: [Validators.required], nonNullable: true }],
   });
   getControlName = getControlName;
 
@@ -31,6 +37,7 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
+      this.contactForm.patchValue({ name: null });
       // send form data to server or perform any other action
       console.log(this.contactForm.value);
     } else {
