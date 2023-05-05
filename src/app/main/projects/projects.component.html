@@ -11,8 +11,8 @@
     <h1>{{project.title}}</h1>
     <p class="flex gap-5"><span *ngFor="let skill of project.skills">{{skill}}</span></p>
     <div class="flex justify-between">
-      <theme-button>VIEW PROJECT</theme-button>
-      <theme-button>VIEW CODE</theme-button>
+      <theme-link [href]="project.url.project" target="_blank">VIEW PROJECT</theme-link>
+      <theme-link [href]="project.url.code" target="_blank">VIEW CODE</theme-link>
     </div>
   </section>
 </section>

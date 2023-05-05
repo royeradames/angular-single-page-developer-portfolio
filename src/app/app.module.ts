@@ -14,9 +14,11 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeButtonComponent } from './component/theme-button/theme-button.component';
+import {ThemeLinkComponent} from "./component/theme-link/theme-link.component";
 
 @NgModule({
   declarations: [
+    ThemeLinkComponent,
     AppComponent,
     SocialLinksComponent,
     ContactComponent,
