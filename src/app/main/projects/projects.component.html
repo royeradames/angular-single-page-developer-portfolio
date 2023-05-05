@@ -5,7 +5,7 @@
   </section>
   <section *ngFor="let project of projects" class="grid gap-5">
     <picture>
-      <source *ngIf="let source of project.picture.sources" [media]="source.media" [srcset]="source.src">
+      <source *ngFor="let source of project.picture.sources" [media]="source.media" [srcset]="source.src">
       <img [alt]="project.picture.img.src" [src]="project.picture.img.alt">
     </picture>
     <h1>{{project.title}}</h1>
