@@ -33,8 +33,8 @@ import { ThemeButtonComponent } from './component/theme-button/theme-button.comp
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    CommonModule, // Add this
-    FormsModule, // Add this
+    CommonModule,
+    FormsModule,
     environment.production
       ? ServiceWorkerModule.register('service-worker.js')
       : [],
