@@ -13,7 +13,6 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { ThemeButtonComponent } from './component/theme-button/theme-button.component';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { ThemeButtonComponent } from './component/theme-button/theme-button.comp
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    CommonModule,
     FormsModule,
     environment.production
       ? ServiceWorkerModule.register('service-worker.js')
