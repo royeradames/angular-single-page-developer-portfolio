@@ -21,6 +21,7 @@
     }
     &-image{
       grid-area: image;
+      //overlap with heading
       grid-column: 2 / span 2;
     }
   }
