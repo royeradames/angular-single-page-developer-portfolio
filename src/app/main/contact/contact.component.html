@@ -1,8 +1,11 @@
-<section id="contact" class="grid gap-5">
-    <h1 class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter">Contact</h1>
-    <p class="font-normal font-medium text-base leading-26 text-center">I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you
+<section id="contact" class="grid gap-5 lg:grid-cols-2 lg:gap-64">
+  <section class="grid">
+    <h1 class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl lg:text-8xl">Contact</h1>
+    <p class="font-normal font-medium text-base leading-26 text-center md:text-lg">I would love to hear about your project and how
+      I could help. Please fill in the form, and I’ll get back to you
       as
       soon as possible.</p>
+  </section>
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
     <section class="grid gap-0.5">
       <label for="name" class="sr-only">Name</label>
