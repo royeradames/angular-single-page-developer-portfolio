@@ -1,4 +1,4 @@
-<section id="about" class="grid place-items-center gap-5m gap-5 layout md:place-items-start">
+<section id="about" class="grid place-items-center gap-5m gap-5 layout md:place-items-start md:gap-0">
   <picture class="layout-image">
     <source *ngFor="let source of userData.picture.sources" [media]="source.media" [srcset]="source.src">
     <img [alt]="userData.picture.img.src" [src]="userData.picture.img.alt">
