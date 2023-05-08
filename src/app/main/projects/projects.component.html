@@ -4,12 +4,12 @@
     <theme-button>CONTACT ME</theme-button>
   </section>
 
-  <section *ngFor="let project of projects" class="grid gap-5 md:grid-cols-2">
-    <picture class="md:col-span-2">
+  <section *ngFor="let project of projects" class="grid gap-5 grid-cols-2">
+    <picture class="col-span-2">
       <source *ngFor="let source of project.picture.sources" [media]="source.media" [srcset]="source.src">
       <img [alt]="project.picture.img.src" [src]="project.picture.img.alt">
     </picture>
-    <section class="grid gap-2 md:col-span-2">
+    <section class="grid gap-2 col-span-2">
       <h1 class="">{{project.title}}</h1>
       <p class="flex gap-5"><span *ngFor="let skill of project.skills">{{skill}}</span></p>
     </section>
