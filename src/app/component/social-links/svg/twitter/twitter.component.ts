@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-twitter',
+  selector: 'svg-twitter',
   templateUrl: './twitter.component.html',
   styleUrls: ['./twitter.component.scss']
 })

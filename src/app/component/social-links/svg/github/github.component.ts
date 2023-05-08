@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-github',
+  selector: 'svg-github',
   templateUrl: './github.component.html',
   styleUrls: ['./github.component.scss']
 })
