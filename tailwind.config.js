@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      textUnderlineOffset: {
+        9: '17px',
+      },
       fontFamily: {
         "space-grotesk": ["Space Grotesk", "sans-serif"],
       },
