@@ -12,11 +12,11 @@ export const projects: ProjectsInterface[] = [
       sources: [
         {
           src: 'assets/images/thumbnail-project-1-small.webp',
-          media: '(max-width: 768px)',
+          media: '(min-width: 1px)',
         },
         {
           src: 'assets/images/thumbnail-project-1-large.webp',
-          media: '(max-width: 1024px)',
+          media: '(min-width: 1024px)',
         },
       ],
       img: {
@@ -36,11 +36,11 @@ export const projects: ProjectsInterface[] = [
       sources: [
         {
           src: 'assets/images/thumbnail-project-2-small.webp',
-          media: '(max-width: 768px)',
+          media: '(min-width: 1px)',
         },
         {
           src: 'assets/images/thumbnail-project-2-large.webp',
-          media: '(max-width: 1024px)',
+          media: '(min-width: 1024px)',
         },
       ],
       img: {
@@ -60,11 +60,11 @@ export const projects: ProjectsInterface[] = [
       sources: [
         {
           src: 'assets/images/thumbnail-project-3-small.webp',
-          media: '(max-width: 768px)',
+          media: '(min-width: 1px)',
         },
         {
           src: 'assets/images/thumbnail-project-3-large.webp',
-          media: '(max-width: 1024px)',
+          media: '(min-width: 1024px)',
         },
       ],
       img: {
@@ -84,11 +84,11 @@ export const projects: ProjectsInterface[] = [
       sources: [
         {
           src: 'assets/images/thumbnail-project-4-small.webp',
-          media: '(max-width: 768px)',
+          media: '(min-width: 1px)',
         },
         {
           src: 'assets/images/thumbnail-project-4-large.webp',
-          media: '(max-width: 1024px)',
+          media: '(min-width: 1024px)',
         },
       ],
       img: {
@@ -108,11 +108,11 @@ export const projects: ProjectsInterface[] = [
       sources: [
         {
           src: 'assets/images/thumbnail-project-5-small.webp',
-          media: '(max-width: 768px)',
+          media: '(min-width: 1px)',
         },
         {
           src: 'assets/images/thumbnail-project-5-large.webp',
-          media: '(max-width: 1024px)',
+          media: '(min-width: 1024px)',
         },
       ],
       img: {
@@ -132,11 +132,11 @@ export const projects: ProjectsInterface[] = [
       sources: [
         {
           src: 'assets/images/thumbnail-project-6-small.webp',
-          media: '(max-width: 768px)',
+          media: '(min-width: 1px)',
         },
         {
           src: 'assets/images/thumbnail-project-6-large.webp',
-          media: '(max-width: 1024px)',
+          media: '(min-width: 1024px)',
         },
       ],
       img: {
