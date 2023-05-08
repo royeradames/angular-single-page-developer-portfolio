@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {userData, UserDataInterface} from "./userData";
 
 @Component({
   selector: 'app-about',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+  userData:UserDataInterface = userData
 
 }
