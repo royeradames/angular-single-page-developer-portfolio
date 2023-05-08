@@ -1,21 +1,18 @@
-<section class="grid gap-10" id="projects">
-  <section class="flex justify-between place-items-center">
+<section class="grid gap-10 gap-y-16 gap-x-6 md:grid-cols-2" id="projects">
+  <section class="flex justify-between place-items-center md:col-span-2">
     <h1 class="font-normal font-bold text-4xl leading-40 tracking-tighter md:text-7xl">Projects</h1>
     <theme-button>CONTACT ME</theme-button>
   </section>
 
-  <div class="grid gap-y-16 gap-x-6 md:grid-cols-2">
-    <section *ngFor="let project of projects" class="grid gap-5">
-      <picture>
-        <source *ngFor="let source of project.picture.sources" [media]="source.media" [srcset]="source.src">
-        <img [alt]="project.picture.img.src" [src]="project.picture.img.alt">
-      </picture>
-      <h1>{{project.title}}</h1>
+  <section *ngFor="let project of projects" class="grid gap-5 md:grid-cols-2">
+    <picture class="md:col-span-2">
+      <source *ngFor="let source of project.picture.sources" [media]="source.media" [srcset]="source.src">
+      <img [alt]="project.picture.img.src" [src]="project.picture.img.alt">
+    </picture>
+    <section class="grid gap-2 md:col-span-2">
+      <h1 class="">{{project.title}}</h1>
       <p class="flex gap-5"><span *ngFor="let skill of project.skills">{{skill}}</span></p>
-      <div class="flex justify-between">
-        <theme-link [href]="project.url.project" target="_blank">VIEW PROJECT</theme-link>
-        <theme-link [href]="project.url.code" target="_blank">VIEW CODE</theme-link>
-      </div>
     </section>
-  </div>
-</section>
+    <theme-link [href]="project.url.project" target="_blank">VIEW PROJECT</theme-link>
+    <theme-link [href]="project.url.code" target="_blank">VIEW CODE</theme-link>
+  </section>
