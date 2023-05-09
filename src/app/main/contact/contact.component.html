@@ -1,53 +1,70 @@
-<section id="contact" class="grid gap-5 lg:grid-cols-2 lg:gap-64">
+<section class="grid gap-5 lg:grid-cols-2 lg:gap-64" id="contact">
   <section class="grid">
-    <h1 class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl lg:text-8xl">Contact</h1>
-    <p class="font-normal font-medium text-base leading-26 text-center md:text-lg">I would love to hear about your project and how
+    <h1 class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl lg:text-8xl">
+      Contact</h1>
+    <p class="font-normal font-medium text-base leading-26 text-center md:text-lg">I would love to hear about your
+      project and how
       I could help. Please fill in the form, and I’ll get back to you
       as
       soon as possible.</p>
   </section>
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
     <section class="grid gap-0.5">
-      <label for="name" class="sr-only">Name</label>
+      <label class="sr-only" for="name">Name</label>
       <input [formControlName]="getControlName(contactForm, contactForm.controls.name)"
-             class="bg-transparent text-white opacity-50 border-b border-solid border-white w-full focus:outline-none focus:border-opacity-100"
+             [ngClass]="{
+    'border-custom-red': contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched),
+    'border-custom-green ': contactForm.controls.name.valid && (contactForm.controls.name.dirty || contactForm.controls.name.touched),
+    'border-custom-white': !(contactForm.controls.name.dirty || contactForm.controls.name.touched),
+  }"
+             class="bg-transparent text-white border-b border-solid w-full focus:outline-none "
              id="name"
              placeholder="NAME"
              type="text">
       <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)"
-           class="grid gap-0.5">
-        <p *ngIf="contactForm.controls.name.errors?.['required']">
+           class="grid gap-0.5 justify-end text-custom-red">
+        <p *ngIf="contactForm.controls.name.errors?.['required']" class="text-custom-red">
           Name is required.
         </p>
       </div>
     </section>
     <section class="grid gap-0.5">
-      <label for="email" class="sr-only">Email</label>
+      <label class="sr-only" for="email">Email</label>
       <input [formControlName]="getControlName(contactForm,contactForm.controls.email)"
-             class="bg-transparent text-white opacity-50 border-b border-solid border-white w-full focus:outline-none focus:border-opacity-100"
-             id="email"placeholder="EMAIL"
+             [ngClass]="{
+    'border-custom-red ': contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched),
+    'border-custom-green ': contactForm.controls.email.valid && (contactForm.controls.email.dirty || contactForm.controls.email.touched),
+    'border-custom-white': !(contactForm.controls.email.dirty || contactForm.controls.email.touched),
+  }"
+             class="bg-transparent text-white border-b border-solid w-full focus:outline-none "
+             id="email" placeholder="EMAIL"
              type="email">
       <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
-           class="grid gap-0.5">
-        <p *ngIf="contactForm.controls.email.errors?.['required']">
+           class="grid gap-0.5 justify-end text-custom-red">
+        <p *ngIf="contactForm.controls.email.errors?.['required']" class="text-custom-red">
           Email is required.
         </p>
-        <p *ngIf="contactForm.controls.email.errors?.['email']">
+        <p *ngIf="contactForm.controls.email.errors?.['email']" class="text-custom-red">
           Email must be a valid email address.
         </p>
       </div>
     </section>
     <section class="grid gap-0.5">
-      <label for="message" class="sr-only">Message</label>
+      <label class="sr-only" for="message">Message</label>
       <textarea [formControlName]="getControlName(contactForm,contactForm.controls.message)"
-                class="bg-transparent text-white opacity-50 border-b border-solid border-white w-full focus:outline-none focus:border-opacity-100 resize-y"
+                [ngClass]="{
+    'border-custom-red ': contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched),
+    'border-custom-green ': contactForm.controls.message.valid && (contactForm.controls.message.dirty || contactForm.controls.message.touched),
+    'border-custom-white': !(contactForm.controls.message.dirty || contactForm.controls.message.touched),
+  }"
+                class="bg-transparent text-white border-b border-solid  w-full focus:outline-none  resize-y text-custom-white"
                 id="message"
                 placeholder="MESSAGE"
                 rows="4"
       ></textarea>
       <div *ngIf="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)"
-           class="grid gap-0.5">
-        <p *ngIf="contactForm.controls.message.errors?.['required']">
+           class="grid gap-0.5 justify-end text-custom-red">
+        <p *ngIf="contactForm.controls.message.errors?.['required']" class="text-custom-red">
           Message is required.
         </p>
       </div>
