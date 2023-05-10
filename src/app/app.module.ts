@@ -20,6 +20,8 @@ import { GithubComponent } from './component/social-links/svg/github/github.comp
 import { FrontendMentorComponent } from './component/social-links/svg/frontend-mentor/frontend-mentor.component';
 import { TwitterComponent } from './component/social-links/svg/twitter/twitter.component';
 import { ThemeFormFieldComponent } from './component/theme-form-field/theme-form-field.component';
+import { ThemeInputComponent } from './component/theme-input/theme-input.component';
+import { ThemeTextareaComponent } from './component/theme-textarea/theme-textarea.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ThemeFormFieldComponent } from './component/theme-form-field/theme-form
     FrontendMentorComponent,
     TwitterComponent,
     ThemeFormFieldComponent,
+    ThemeInputComponent,
+    ThemeTextareaComponent,
   ],
   imports: [
     ReactiveFormsModule,
