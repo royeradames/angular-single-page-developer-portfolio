@@ -31,8 +31,9 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      this.contactForm.patchValue({ name: null });
       // send form data to server or perform any other action
+      console.log(this.contactForm.value);
+      this.contactForm.reset();
       console.log(this.contactForm.value);
     } else {
       // mark all fields as touched to display validation errors
