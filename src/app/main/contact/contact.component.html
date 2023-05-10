@@ -11,28 +11,28 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
     <section class="grid gap-0.5 relative">
       <label class="sr-only" for="name">Name</label>
-      <div class="flex place-items-center">
+      <section class="flex place-items-center">
         <input [formControlName]="getControlName(contactForm, contactForm.controls.name)"
-                   [ngClass]="{
+               [ngClass]="{
           'border-custom-red': contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched),
           'border-custom-green ': contactForm.controls.name.valid && (contactForm.controls.name.dirty || contactForm.controls.name.touched),
           'border-custom-white': !(contactForm.controls.name.dirty || contactForm.controls.name.touched),
         }"
-                   class="bg-transparent text-white border-b border-solid w-full focus:outline-none relative p-5"
-                   id="name"
-                   placeholder="NAME"
-                   type="text">
+               class="bg-transparent text-white border-b border-solid w-full focus:outline-none relative p-5"
+               id="name"
+               placeholder="NAME"
+               type="text">
         <span
           *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)"
           class="absolute right-0 text-custom-red"
-          >
+        >
         <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="11.5" stroke="#FF6F5B"/>
           <rect fill="#FF6F5B" height="9" rx="1" width="2" x="11" y="6"/>
           <rect fill="#FF6F5B" height="2" rx="1" width="2" x="11" y="17"/>
         </svg>
       </span>
-      </div>
+      </section>
 
       <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)"
            class="grid gap-0.5 justify-end text-custom-red">
@@ -42,8 +42,8 @@
       </div>
 
     </section>
-      <section class="grid gap-0.5">
-    <div class="flex place-items-center relative">
+    <section class="grid gap-0.5">
+      <section class="flex place-items-center relative">
         <label class="sr-only" for="email">Email</label>
         <input [formControlName]="getControlName(contactForm,contactForm.controls.email)"
                [ngClass]="{
@@ -64,7 +64,7 @@
               <rect fill="#FF6F5B" height="2" rx="1" width="2" x="11" y="17"/>
             </svg>
           </span>
-    </div>
+      </section>
 
       <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
            class="grid gap-0.5 justify-end text-custom-red">
@@ -78,18 +78,18 @@
     </section>
     <section class="grid gap-0.5">
       <label class="sr-only" for="message">Message</label>
-      <div class="flex place-items-center relative">
+      <section class="flex place-items-center relative">
         <textarea [formControlName]="getControlName(contactForm,contactForm.controls.message)"
-                      [ngClass]="{
+                  [ngClass]="{
           'border-custom-red ': contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched),
           'border-custom-green ': contactForm.controls.message.valid && (contactForm.controls.message.dirty || contactForm.controls.message.touched),
           'border-custom-white': !(contactForm.controls.message.dirty || contactForm.controls.message.touched),
         }"
-                      class="bg-transparent text-white border-b border-solid  w-full focus:outline-none  resize-y text-custom-white p-5"
-                      id="message"
-                      placeholder="MESSAGE"
-                      rows="4"
-      ></textarea>
+                  class="bg-transparent text-white border-b border-solid  w-full focus:outline-none  resize-y text-custom-white p-5"
+                  id="message"
+                  placeholder="MESSAGE"
+                  rows="4"
+        ></textarea>
         <span
           *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
           class="absolute right-0 text-custom-red"
@@ -99,7 +99,7 @@
                     <rect fill="#FF6F5B" height="9" rx="1" width="2" x="11" y="6"/>
                     <rect fill="#FF6F5B" height="2" rx="1" width="2" x="11" y="17"/>
                   </svg>
-                </span></div>
+                </span></section>
       <div *ngIf="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)"
            class="grid gap-0.5 justify-end text-custom-red">
         <p *ngIf="contactForm.controls.message.errors?.['required']" class="text-custom-red">
