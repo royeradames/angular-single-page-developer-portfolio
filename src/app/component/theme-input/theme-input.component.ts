@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { FormFieldBase } from '../../share/form-field-base.shared';
 
 @Component({
   selector:
@@ -7,7 +8,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './theme-input.component.html',
   styleUrls: ['./theme-input.component.scss'],
 })
-export class ThemeInputComponent {
+export class ThemeInputComponent implements OnChanges {
   @Input() control!: FormControl;
   @Input() fieldId!: string;
   @Input() label!: string;
@@ -15,24 +16,15 @@ export class ThemeInputComponent {
   @Input() placeholder!: string;
   @Input() errorDefinitions!: { [key: string]: string };
 
-  get isInvalid() {
-    return this.control.invalid && (this.control.dirty || this.control.touched);
-  }
+  base!: FormFieldBase;
 
-  get errorMessages() {
-    const errors = this.control.errors;
-    if (errors) {
-      return Object.keys(errors).map((key) => this.errorDefinitions[key]);
-    }
-    return [];
-  }
-
-  get inputClasses() {
-    return {
-      'border-custom-red': this.isInvalid,
-      'border-custom-green':
-        this.control.valid && (this.control.dirty || this.control.touched),
-      'border-custom-white': !(this.control.dirty || this.control.touched),
-    };
+  ngOnChanges() {
+    this.base = new FormFieldBase({
+      control: this.control,
+      fieldId: this.fieldId,
+      label: this.label,
+      placeholder: this.placeholder,
+      errorDefinitions: this.errorDefinitions,
+    });
   }
 }

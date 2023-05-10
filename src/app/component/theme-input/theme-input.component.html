@@ -3,13 +3,13 @@
   <section class="flex place-items-center">
     <input
       [formControl]="control"
-      [ngClass]="inputClasses"
+      [ngClass]="base.inputClasses"
       class="bg-transparent text-white border-b border-solid w-full focus:outline-none relative p-5"
       id="{{ fieldId }}"
       placeholder="{{ placeholder }}"
       [type]="type"
     />
-    <span *ngIf="isInvalid" class="absolute right-0 text-custom-red">
+    <span *ngIf="base.isInvalid" class="absolute right-0 text-custom-red">
       <svg
         fill="none"
         height="24"
@@ -23,8 +23,8 @@
       </svg>
     </span>
   </section>
-  <div *ngIf="isInvalid" class="grid gap-0.5 justify-end text-custom-red">
-    <ng-container *ngFor="let error of errorMessages">
+  <div *ngIf="base.isInvalid" class="grid gap-0.5 justify-end text-custom-red">
+    <ng-container *ngFor="let error of base.errorMessages">
       <p class="text-custom-red">{{ error }}</p>
     </ng-container>
   </div>
