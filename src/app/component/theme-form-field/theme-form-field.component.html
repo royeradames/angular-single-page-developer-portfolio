@@ -1,0 +1,18 @@
+<section class="grid gap-0.5 relative">
+  <label class="sr-only" for="{{fieldId}}">{{label}}</label>
+  <section class="flex place-items-center">
+    <ng-content></ng-content> <!-- Use content projection for input/textarea -->
+    <span *ngIf="isInvalid" class="absolute right-0 text-custom-red">
+      <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="11.5" stroke="#FF6F5B"/>
+        <rect fill="#FF6F5B" height="9" rx="1" width="2" x="11" y="6"/>
+        <rect fill="#FF6F5B" height="2" rx="1" width="2" x="11" y="17"/>
+      </svg>
+    </span>
+  </section>
+  <div *ngIf="isInvalid" class="grid gap-0.5 justify-end text-custom-red">
+    <ng-container *ngFor="let error of errorMessages">
+      <p class="text-custom-red">{{error}}</p>
+    </ng-container>
+  </div>
+</section>

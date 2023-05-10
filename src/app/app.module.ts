@@ -19,6 +19,7 @@ import { LinkedinComponent } from './component/social-links/svg/linkedin/linkedi
 import { GithubComponent } from './component/social-links/svg/github/github.component';
 import { FrontendMentorComponent } from './component/social-links/svg/frontend-mentor/frontend-mentor.component';
 import { TwitterComponent } from './component/social-links/svg/twitter/twitter.component';
+import { ThemeFormFieldComponent } from './component/theme-form-field/theme-form-field.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TwitterComponent } from './component/social-links/svg/twitter/twitter.c
     GithubComponent,
     FrontendMentorComponent,
     TwitterComponent,
+    ThemeFormFieldComponent,
   ],
   imports: [
     ReactiveFormsModule,
