@@ -42,17 +42,30 @@
       </div>
 
     </section>
-    <section class="grid gap-0.5">
-      <label class="sr-only" for="email">Email</label>
-      <input [formControlName]="getControlName(contactForm,contactForm.controls.email)"
-             [ngClass]="{
-    'border-custom-red ': contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched),
-    'border-custom-green ': contactForm.controls.email.valid && (contactForm.controls.email.dirty || contactForm.controls.email.touched),
-    'border-custom-white': !(contactForm.controls.email.dirty || contactForm.controls.email.touched),
-  }"
-             class="bg-transparent text-white border-b border-solid w-full focus:outline-none "
-             id="email" placeholder="EMAIL"
-             type="email">
+      <section class="grid gap-0.5">
+    <div class="flex place-items-center relative">
+        <label class="sr-only" for="email">Email</label>
+        <input [formControlName]="getControlName(contactForm,contactForm.controls.email)"
+               [ngClass]="{
+        'border-custom-red ': contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched),
+        'border-custom-green ': contactForm.controls.email.valid && (contactForm.controls.email.dirty || contactForm.controls.email.touched),
+        'border-custom-white': !(contactForm.controls.email.dirty || contactForm.controls.email.touched),
+      }"
+               class="bg-transparent text-white border-b border-solid w-full focus:outline-none p-5"
+               id="email" placeholder="EMAIL"
+               type="email">
+        <span
+          *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
+          class="absolute right-0 text-custom-red"
+        >
+            <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11.5" stroke="#FF6F5B"/>
+              <rect fill="#FF6F5B" height="9" rx="1" width="2" x="11" y="6"/>
+              <rect fill="#FF6F5B" height="2" rx="1" width="2" x="11" y="17"/>
+            </svg>
+          </span>
+    </div>
+
       <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
            class="grid gap-0.5 justify-end text-custom-red">
         <p *ngIf="contactForm.controls.email.errors?.['required']" class="text-custom-red">
