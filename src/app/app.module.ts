@@ -22,7 +22,7 @@ import { TwitterComponent } from './component/social-links/svg/twitter/twitter.c
 import { ThemeFormFieldComponent } from './component/theme-form-field/theme-form-field.component';
 import { ThemeInputComponent } from './component/theme-input/theme-input.component';
 import { ThemeTextareaComponent } from './component/theme-textarea/theme-textarea.component';
-
+import { NgOptimizedImage } from '@angular/common';
 @NgModule({
   declarations: [
     ThemeLinkComponent,
@@ -49,6 +49,7 @@ import { ThemeTextareaComponent } from './component/theme-textarea/theme-textare
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgOptimizedImage,
     environment.production
       ? ServiceWorkerModule.register('service-worker.js')
       : [],

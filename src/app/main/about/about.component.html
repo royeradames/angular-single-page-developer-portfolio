@@ -8,7 +8,12 @@
       [media]="source.media"
       [srcset]="source.src"
     />
-    <img [alt]="userData.picture.img.src" [src]="userData.picture.img.alt" />
+    <img
+      [alt]="userData.picture.img.src"
+      [ngSrc]="userData.picture.img.alt"
+      height="890"
+      width="1440"
+    />
   </picture>
   <h1
     class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl layout-heading md:text-start lg:text-8xl"
