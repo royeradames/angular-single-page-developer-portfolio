@@ -8,7 +8,7 @@ describe('TwitterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TwitterComponent]
+      declarations: [TwitterComponent],
     });
     fixture = TestBed.createComponent(TwitterComponent);
     component = fixture.componentInstance;

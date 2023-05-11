@@ -8,7 +8,7 @@ describe('ThemeButtonComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ThemeLinkComponent]
+      declarations: [ThemeLinkComponent],
     });
     fixture = TestBed.createComponent(ThemeLinkComponent);
     component = fixture.componentInstance;

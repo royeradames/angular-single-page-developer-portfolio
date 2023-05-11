@@ -8,7 +8,7 @@ describe('ThemeFormFieldComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ThemeFormFieldComponent]
+      declarations: [ThemeFormFieldComponent],
     });
     fixture = TestBed.createComponent(ThemeFormFieldComponent);
     component = fixture.componentInstance;

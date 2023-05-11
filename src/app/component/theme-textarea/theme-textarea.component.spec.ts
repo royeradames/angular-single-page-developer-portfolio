@@ -8,7 +8,7 @@ describe('ThemeTextareaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ThemeTextareaComponent]
+      declarations: [ThemeTextareaComponent],
     });
     fixture = TestBed.createComponent(ThemeTextareaComponent);
     component = fixture.componentInstance;

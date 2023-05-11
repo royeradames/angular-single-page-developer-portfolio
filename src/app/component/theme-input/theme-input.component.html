@@ -4,10 +4,10 @@
     <input
       [formControl]="control"
       [ngClass]="base.inputClasses"
+      [type]="type"
       class="bg-transparent text-white border-b border-solid w-full focus:outline-none relative p-5"
       id="{{ fieldId }}"
       placeholder="{{ placeholder }}"
-      [type]="type"
     />
     <span *ngIf="base.isInvalid" class="absolute right-0 text-custom-red">
       <svg

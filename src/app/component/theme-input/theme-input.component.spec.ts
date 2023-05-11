@@ -8,7 +8,7 @@ describe('ThemeInputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ThemeInputComponent]
+      declarations: [ThemeInputComponent],
     });
     fixture = TestBed.createComponent(ThemeInputComponent);
     component = fixture.componentInstance;

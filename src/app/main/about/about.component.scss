@@ -1,29 +1,31 @@
-@media(min-width: 768px){
-  .layout{
+@media (min-width: 768px) {
+  .layout {
     display: grid;
     grid-template:
-    ". . image" 1fr
-    "heading heading image"
-    ". . image" 60px
-    "message . image"
-    ". . image" 34px
-    "action . image"
-  / 2fr 10ch 1fr
-  ;
-    &-heading{
+      ". . image" 1fr
+      "heading heading image"
+      ". . image" 60px
+      "message . image"
+      ". . image" 34px
+      "action . image"
+      / 2fr 10ch 1fr;
+
+    &-heading {
       grid-area: heading;
     }
-    &-message{
+
+    &-message {
       grid-area: message;
     }
-    &-action{
+
+    &-action {
       grid-area: action;
     }
-    &-image{
+
+    &-image {
       grid-area: image;
       //overlap with heading
       grid-column: 2 / span 2;
     }
   }
 }
-

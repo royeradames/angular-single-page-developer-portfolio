@@ -15,35 +15,35 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
     <theme-input
       [control]="contactForm.controls.name"
+      [errorDefinitions]="{ required: 'Name is required.' }"
       fieldId="name"
       label="Name"
       placeholder="NAME"
-      [errorDefinitions]="{ required: 'Name is required.' }"
     >
     </theme-input>
     <theme-input
       [control]="contactForm.controls.email"
-      fieldId="email"
-      label="Email"
-      placeholder="EMAIL"
-      type="email"
       [errorDefinitions]="{
         required: 'Email is required.',
         email: 'Email must be a valid email address.'
       }"
+      fieldId="email"
+      label="Email"
+      placeholder="EMAIL"
+      type="email"
     >
     </theme-input>
 
     <theme-textarea
       [control]="contactForm.controls.message"
+      [errorDefinitions]="{ required: 'Message is required.' }"
       fieldId="message"
       label="Message"
       placeholder="MESSAGE"
-      [errorDefinitions]="{ required: 'Message is required.' }"
     >
     </theme-textarea>
     <theme-button class="max-w-max justify-self-end" type="submit"
-      >SEND MESSAGE</theme-button
-    >
+      >SEND MESSAGE
+    </theme-button>
   </form>
 </section>

@@ -8,7 +8,7 @@ describe('FrontendMentorComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FrontendMentorComponent]
+      declarations: [FrontendMentorComponent],
     });
     fixture = TestBed.createComponent(FrontendMentorComponent);
     component = fixture.componentInstance;

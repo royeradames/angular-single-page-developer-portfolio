@@ -14,7 +14,7 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeButtonComponent } from './component/theme-button/theme-button.component';
-import {ThemeLinkComponent} from "./component/theme-link/theme-link.component";
+import { ThemeLinkComponent } from './component/theme-link/theme-link.component';
 import { LinkedinComponent } from './component/social-links/svg/linkedin/linkedin.component';
 import { GithubComponent } from './component/social-links/svg/github/github.component';
 import { FrontendMentorComponent } from './component/social-links/svg/frontend-mentor/frontend-mentor.component';
