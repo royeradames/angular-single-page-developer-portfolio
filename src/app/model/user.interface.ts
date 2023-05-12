@@ -5,4 +5,6 @@ export interface UserDataInterface {
   name: string;
   img: ImgInterface;
   sources: SourceInterface[];
+  greeting: string;
+  about: string;
 }

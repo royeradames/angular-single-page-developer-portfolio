@@ -1,33 +1,47 @@
+<!--this can be better -->
+<ng-template #skeletonScreen>
+  <section
+    class="grid place-items-center gap-5 layout md:place-items-start md:gap-0"
+    id="about"
+  >
+    <div class="animate-pulse bg-gray-400 h-56 w-full"></div>
+    <h1 class="animate-pulse bg-gray-400 h-10 w-3/4 mt-4">&nbsp;</h1>
+    <p class="animate-pulse bg-gray-400 h-6 w-1/2 mt-2">&nbsp;</p>
+    <div class="animate-pulse bg-gray-400 h-10 w-1/4 mt-2">&nbsp;</div>
+  </section>
+</ng-template>
+
 <section
+  *ngIf="!isLoading; else skeletonScreen"
   class="grid place-items-center gap-5m gap-5 layout md:place-items-start md:gap-0"
   id="about"
 >
   <picture class="layout-image">
     <source
-      *ngFor="let source of userData.picture.sources"
+      *ngFor="let source of userData.sources"
       [media]="source.media"
       [srcset]="source.src"
     />
     <img
-      [alt]="userData.picture.img.src"
-      [ngSrc]="userData.picture.img.alt"
-      height="890"
-      width="1440"
+      [alt]="userData.img.src"
+      [ngSrc]="userData.img.alt"
+      [height]="userData.img.height"
+      [width]="userData.img.width"
     />
   </picture>
   <h1
     class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl layout-heading md:text-start lg:text-8xl"
   >
-    Nice to meet you! I’m
-    <span class="underline underline-offset-9 decoration-custom-green"
-      >Adam Keyes</span
+    {{ userData.greeting }}
+    <span class="underline underline-offset-9 decoration-custom-green">{{
+      userData.name
+    }}</span
     >.
   </h1>
   <p
     class="font-normal font-medium text-base leading-26 text-center md:text-lg layout-message md:text-start"
   >
-    Based in the UK, I’m a front-end developer passionate about building
-    accessible web apps that users love.
+    {{ userData.about }}
   </p>
   <theme-link
     [href]="'#contact'"
