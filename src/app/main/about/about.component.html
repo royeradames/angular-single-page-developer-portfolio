@@ -1,18 +1,4 @@
-<!--this can be better -->
-<ng-template #skeletonScreen>
-  <section
-    class="grid place-items-center gap-5 layout md:place-items-start md:gap-0"
-    id="about"
-  >
-    <div class="animate-pulse bg-gray-400 h-56 w-full"></div>
-    <h1 class="animate-pulse bg-gray-400 h-10 w-3/4 mt-4">&nbsp;</h1>
-    <p class="animate-pulse bg-gray-400 h-6 w-1/2 mt-2">&nbsp;</p>
-    <div class="animate-pulse bg-gray-400 h-10 w-1/4 mt-2">&nbsp;</div>
-  </section>
-</ng-template>
-
 <section
-  *ngIf="!isLoading; else skeletonScreen"
   class="grid place-items-center gap-5m gap-5 layout md:place-items-start md:gap-0"
   id="about"
 >

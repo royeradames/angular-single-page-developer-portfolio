@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { ThemeFormFieldComponent } from './component/theme-form-field/theme-form
 import { ThemeInputComponent } from './component/theme-input/theme-input.component';
 import { ThemeTextareaComponent } from './component/theme-textarea/theme-textarea.component';
 import { NgOptimizedImage } from '@angular/common';
+import { DataService } from './share/data.service';
 @NgModule({
   declarations: [
     ThemeLinkComponent,
@@ -54,7 +55,15 @@ import { NgOptimizedImage } from '@angular/common';
       ? ServiceWorkerModule.register('service-worker.js')
       : [],
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (dataService: DataService) => async () =>
+        await dataService.loadData(),
+      deps: [DataService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
