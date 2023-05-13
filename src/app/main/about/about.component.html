@@ -38,8 +38,8 @@
     {{ userData.about }}
   </p>
   <theme-link
-    [href]="'#contact'"
+    [href]="userData.link"
     class="inline-block max-w-max self-center layout-action"
-    >CONTACT ME
+    >{{ userData.actionLabel }}
   </theme-link>
 </section>

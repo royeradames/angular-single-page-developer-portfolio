@@ -7,4 +7,6 @@ export interface UserDataInterface {
   sources: SourceInterface[];
   greeting: string;
   about: string;
+  link: string;
+  actionLabel: string;
 }

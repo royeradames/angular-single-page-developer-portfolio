@@ -24,6 +24,8 @@ export class DataService {
       name: userEntry.fields.name,
       greeting: userEntry.fields.greeting,
       about: userEntry.fields.about,
+      actionLabel: userEntry.fields.actionLabel,
+      link: userEntry.fields.link,
       img: {
         height: userEntry.fields.img.fields.file.details.image.height,
         width: userEntry.fields.img.fields.file.details.image.width,
