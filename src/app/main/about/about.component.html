@@ -1,8 +1,12 @@
 <section
-  class="grid place-items-center gap-5m gap-5 layout md:place-items-start md:gap-0"
+  class="grid place-items-center gap-5m gap-5 layout md:place-items-start md:gap-0 relative"
   id="about"
 >
-  <picture class="layout-image">
+  <img
+    class="absolute z-0 top-[30%] right-[70%]"
+    src="assets/svg/pattern-rings.svg"
+  />
+  <picture class="layout-image z-10">
     <source
       *ngFor="let source of userData.sources"
       [media]="source.media"
@@ -16,7 +20,7 @@
     />
   </picture>
   <h1
-    class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl layout-heading md:text-start lg:text-8xl"
+    class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl layout-heading md:text-start lg:text-8xl z-10"
   >
     {{ userData.greeting }}
     <span class="underline underline-offset-9 decoration-custom-green">{{
