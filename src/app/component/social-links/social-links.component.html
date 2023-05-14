@@ -3,28 +3,32 @@
 >
   <a
     class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-custom-white"
-    href="#"
+    [href]="socialLinks.nameLink"
   >
-    adamkeyes
+    {{ socialLinks.name }}
   </a>
   <nav class="flex gap-5 justify-center mt-5 sm:mt-0 place-items-center">
     <a
+      *ngIf="socialLinks.github"
+      [href]="socialLinks.github"
       class="text-custom-white hover:text-custom-green"
-      href="#"
       rel="noopener noreferrer"
       target="_blank"
     >
       <svg-github></svg-github>
     </a>
     <a
+      *ngIf="socialLinks.frontendMentor"
+      [href]="socialLinks.frontendMentor"
       class="text-custom-white hover:text-custom-green"
-      href="#"
       rel="noopener noreferrer"
       target="_blank"
     >
       <svg-frontend-mentor></svg-frontend-mentor>
     </a>
     <a
+      *ngIf="socialLinks.linkedin"
+      [href]="socialLinks.linkedin"
       class="text-custom-white hover:text-custom-green"
       href="#"
       rel="noopener noreferrer"
@@ -33,6 +37,8 @@
       <svg-linkedin></svg-linkedin>
     </a>
     <a
+      *ngIf="socialLinks.twitter"
+      [href]="socialLinks.twitter"
       class="text-custom-white hover:text-custom-green"
       href="#"
       rel="noopener noreferrer"
