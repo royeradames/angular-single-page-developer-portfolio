@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DataService, ProjectListInterface } from '../../share/data.service';
 
 @Component({
@@ -8,10 +8,23 @@ import { DataService, ProjectListInterface } from '../../share/data.service';
 })
 export class ProjectsComponent {
   projects!: ProjectListInterface;
+  hovering: boolean[] = [];
+  clicked: boolean[] = [];
+  windowWidth!: number;
 
   constructor(dataService: DataService) {
     dataService.projectList.subscribe((projectList) => {
       this.projects = projectList;
     });
+
+    for (let i = 0; i < this.projects.projects.length; i++) {
+      this.hovering.push(false);
+      this.clicked.push(false);
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
   }
 }
