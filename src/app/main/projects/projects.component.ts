@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { projects } from './projects.data';
-import { ProjectsInterface } from './model/projects.interface';
+import { DataService, ProjectListInterface } from '../../share/data.service';
 
 @Component({
   selector: 'app-projects',
@@ -8,5 +7,11 @@ import { ProjectsInterface } from './model/projects.interface';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
-  projects: ProjectsInterface[] = projects;
+  projects!: ProjectListInterface;
+
+  constructor(dataService: DataService) {
+    dataService.projectList.subscribe((projectList) => {
+      this.projects = projectList;
+    });
+  }
 }

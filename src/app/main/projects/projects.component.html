@@ -3,19 +3,29 @@
     <h1
       class="font-normal font-bold text-4xl leading-40 tracking-tighter md:text-7xl lg:text-8xl"
     >
-      Projects
+      {{ projects.title }}
     </h1>
-    <theme-link [href]="'#contact'">CONTACT ME</theme-link>
+    <theme-link [href]="projects.actionLink">{{
+      projects.actionText
+    }}</theme-link>
   </section>
 
-  <section *ngFor="let project of projects" class="grid gap-5 grid-cols-2">
+  <section
+    *ngFor="let project of projects.projects"
+    class="grid gap-5 grid-cols-2"
+  >
     <picture class="col-span-2">
       <source
-        *ngFor="let source of project.picture.sources"
+        *ngFor="let source of project.sources"
         [media]="source.media"
         [srcset]="source.src"
       />
-      <img [alt]="project.picture.img.src" [src]="project.picture.img.alt" />
+      <img
+        [attr.alt]="project.image.alt"
+        [ngSrc]="project.image.src"
+        [height]="project.image.height"
+        [width]="project.image.width"
+      />
     </picture>
     <section class="grid gap-2 col-span-2">
       <h1 class="text-2xl">{{ project.title }}</h1>
@@ -23,9 +33,15 @@
         <span *ngFor="let skill of project.skills">{{ skill }}</span>
       </p>
     </section>
-    <theme-link [href]="project.url.project" target="_blank"
-      >VIEW PROJECT
+    <theme-link
+      [href]="project.projectLink"
+      [attr.target]="project.viewProjectOnNewTab ? '_blank' : ''"
+      >{{ projects.viewProjectText }}
     </theme-link>
-    <theme-link [href]="project.url.code" target="_blank">VIEW CODE</theme-link>
+    <theme-link
+      [href]="project.codeLink"
+      [attr.target]="project.viewCodeOnNewTab ? '_blank' : ''"
+      >{{ projects.viewCodeText }}</theme-link
+    >
   </section>
 </section>
