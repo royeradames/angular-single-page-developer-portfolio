@@ -2,18 +2,39 @@
 
 import { Asset, Entry } from "contentful";
 
-export interface IImageWithAiTagsFields {
-  /** Title */
-  title: string;
+export interface IContactPageFields {
+  /** title */
+  title?: string | undefined;
 
-  /** Image */
-  image: Asset;
+  /** message */
+  message?: string | undefined;
 
-  /** Image tags */
-  imageTags: string[];
+  /** nameLabel */
+  nameLabel?: string | undefined;
+
+  /** namePlaceholder */
+  namePlaceholder?: string | undefined;
+
+  /** warningIcon */
+  warningIcon?: Asset | undefined;
+
+  /** emailLabel */
+  emailLabel?: string | undefined;
+
+  /** emailPlaceholder */
+  emailPlaceholder?: string | undefined;
+
+  /** messageLabel */
+  messageLabel?: string | undefined;
+
+  /** messagePlaceholder */
+  messagePlaceholder?: string | undefined;
+
+  /** actionLabel */
+  actionLabel?: string | undefined;
 }
 
-export interface IImageWithAiTags extends Entry<IImageWithAiTagsFields> {
+export interface IContactPage extends Entry<IContactPageFields> {
   sys: {
     id: string;
     type: string;
@@ -22,7 +43,7 @@ export interface IImageWithAiTags extends Entry<IImageWithAiTagsFields> {
     locale: string;
     contentType: {
       sys: {
-        id: "imageWithAiTags";
+        id: "contactPage";
         linkType: "ContentType";
         type: "Link";
       };
@@ -72,8 +93,23 @@ export interface IPictureInterface extends Entry<IPictureInterfaceFields> {
 }
 
 export interface IProjectListFields {
+  /** title */
+  title?: string | undefined;
+
   /** projects */
   projects?: Entry<{ [fieldId: string]: unknown }>[] | undefined;
+
+  /** actionText */
+  actionText?: string | undefined;
+
+  /** actionLink */
+  actionLink?: string | undefined;
+
+  /** viewCodeText */
+  viewCodeText?: string | undefined;
+
+  /** viewProjectText */
+  viewProjectText?: string | undefined;
 }
 
 export interface IProjectList extends Entry<IProjectListFields> {
@@ -94,8 +130,8 @@ export interface IProjectList extends Entry<IProjectListFields> {
 }
 
 export interface IProjectsFields {
-  /** titile */
-  titile?: string | undefined;
+  /** title */
+  title?: string | undefined;
 
   /** projectLink */
   projectLink?: string | undefined;
@@ -111,6 +147,12 @@ export interface IProjectsFields {
 
   /** image */
   image?: Asset | undefined;
+
+  /** viewCodeOnNewTab */
+  viewCodeOnNewTab?: boolean | undefined;
+
+  /** viewProjectOnNewTab */
+  viewProjectOnNewTab?: boolean | undefined;
 }
 
 export interface IProjects extends Entry<IProjectsFields> {
@@ -184,8 +226,17 @@ export interface ISocialLinksFields {
   /** nameLink */
   nameLink?: string | undefined;
 
-  /** socialMedias */
-  socialMedias?: Entry<{ [fieldId: string]: unknown }>[] | undefined;
+  /** github */
+  github?: string | undefined;
+
+  /** frontendMentor */
+  frontendMentor?: string | undefined;
+
+  /** linkedin */
+  linkedin?: string | undefined;
+
+  /** twitter */
+  twitter?: string | undefined;
 }
 
 export interface ISocialLinks extends Entry<ISocialLinksFields> {
@@ -298,7 +349,7 @@ export interface IUser extends Entry<IUserFields> {
 }
 
 export type CONTENT_TYPE =
-  | "imageWithAiTags"
+  | "contactPage"
   | "imgInterface"
   | "pictureInterface"
   | "projectList"
@@ -311,7 +362,7 @@ export type CONTENT_TYPE =
   | "user";
 
 export type IEntry =
-  | IImageWithAiTags
+  | IContactPage
   | IImgInterface
   | IPictureInterface
   | IProjectList
