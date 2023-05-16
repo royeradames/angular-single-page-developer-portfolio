@@ -33,15 +33,17 @@
         <span *ngFor="let skill of project.skills">{{ skill }}</span>
       </p>
     </section>
-    <theme-link
-      [href]="project.projectLink"
-      [attr.target]="project.viewProjectOnNewTab ? '_blank' : ''"
-      >{{ projects.viewProjectText }}
-    </theme-link>
-    <theme-link
-      [href]="project.codeLink"
-      [attr.target]="project.viewCodeOnNewTab ? '_blank' : ''"
-      >{{ projects.viewCodeText }}</theme-link
-    >
+    <section class="flex gap-5 col-span-2 flex-wrap">
+      <theme-link
+        [href]="project.projectLink"
+        [attr.target]="project.viewProjectOnNewTab ? '_blank' : ''"
+        >{{ projects.viewProjectText }}
+      </theme-link>
+      <theme-link
+        [href]="project.codeLink"
+        [attr.target]="project.viewCodeOnNewTab ? '_blank' : ''"
+        >{{ projects.viewCodeText }}</theme-link
+      >
+    </section>
   </section>
 </section>
