@@ -24,6 +24,7 @@ import { ThemeInputComponent } from './component/theme-input/theme-input.compone
 import { ThemeTextareaComponent } from './component/theme-textarea/theme-textarea.component';
 import { NgOptimizedImage } from '@angular/common';
 import { DataService } from './share/data.service';
+import { ProjectLinksComponent } from './main/projects/project-links/project-links.component';
 @NgModule({
   declarations: [
     ThemeLinkComponent,
@@ -44,6 +45,7 @@ import { DataService } from './share/data.service';
     ThemeFormFieldComponent,
     ThemeInputComponent,
     ThemeTextareaComponent,
+    ProjectLinksComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -1,0 +1,10 @@
+<theme-link
+  [href]="project.projectLink"
+  [attr.target]="project.viewProjectOnNewTab ? '_blank' : ''"
+  >{{ projects.viewProjectText }}
+</theme-link>
+<theme-link
+  [href]="project.codeLink"
+  [attr.target]="project.viewCodeOnNewTab ? '_blank' : ''"
+  >{{ projects.viewCodeText }}</theme-link
+>
