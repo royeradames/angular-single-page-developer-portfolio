@@ -88,7 +88,7 @@ export class DataService {
       actionText: projectListEntry.fields.actionText,
       actionLink: projectListEntry.fields.actionLink,
       viewCodeText: projectListEntry.fields.viewCodeText,
-      viewProjectText: projectListEntry.fields.viewCodeText,
+      viewProjectText: projectListEntry.fields.viewProjectText,
     });
     this.user = new BehaviorSubject<UserDataInterface>({
       name: userEntry.fields.name,
