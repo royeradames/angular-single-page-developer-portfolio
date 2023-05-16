@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { UserDataInterface } from '../model/user.interface';
 import { createClient } from 'contentful';
 import { SourceInterface } from '../model/source.interface';
+import { IContactPage } from '../../../@types/generated/contentful';
 import { ImgInterface } from '../model/img.interface';
 
 export interface SocialLinksInterface {
@@ -39,6 +40,7 @@ export class DataService {
   user!: BehaviorSubject<UserDataInterface>;
   socialLinks!: BehaviorSubject<SocialLinksInterface>;
   projectList!: BehaviorSubject<ProjectListInterface>;
+  contactPageData!: BehaviorSubject<IContactPage>;
 
   constructor() {}
 
@@ -51,13 +53,16 @@ export class DataService {
     const userEntryId = '6CFGkHkvZseNUjIZOMAe4X';
     const socialLinksEntryId = '3pl8dDzcamGNZA57CIIGkL';
     const projectListEntryId = '2NIJqNOAizI3EHZhUSR628';
-    const [userEntry, socialLinksEntry, projectListEntry]: any =
+    const aboutPageEntryId = 'Zo13npZTVYY16KerCmL26';
+    const [userEntry, socialLinksEntry, projectListEntry, aboutPageEntry]: any =
       await Promise.all([
         client.getEntry(userEntryId),
         client.getEntry(socialLinksEntryId),
         client.getEntry(projectListEntryId, { include: 3 }),
+        client.getEntry(aboutPageEntryId),
       ]);
 
+    this.contactPageData = new BehaviorSubject<IContactPage>(aboutPageEntry);
     this.projectList = new BehaviorSubject<ProjectListInterface>({
       title: projectListEntry.fields.title,
       projects: projectListEntry.fields.projects.map((project: any) => {

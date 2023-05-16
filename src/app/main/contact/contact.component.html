@@ -7,13 +7,12 @@
     <h1
       class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl lg:text-8xl"
     >
-      Contact
+      {{ pageData.fields.title }}
     </h1>
     <p
       class="font-normal font-medium text-base leading-26 text-center md:text-lg"
     >
-      I would love to hear about your project and how I could help. Please fill
-      in the form, and I’ll get back to you as soon as possible.
+      {{ pageData.fields.message }}
     </p>
   </section>
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
@@ -21,8 +20,8 @@
       [control]="contactForm.controls.name"
       [errorDefinitions]="{ required: 'Name is required.' }"
       fieldId="name"
-      label="Name"
-      placeholder="NAME"
+      [label]="pageData.fields.nameLabel"
+      [placeholder]="pageData.fields.namePlaceholder"
     >
     </theme-input>
     <theme-input
@@ -32,8 +31,8 @@
         email: 'Email must be a valid email address.'
       }"
       fieldId="email"
-      label="Email"
-      placeholder="EMAIL"
+      [label]="pageData.fields.emailLabel"
+      [placeholder]="pageData.fields.emailPlaceholder"
       type="email"
     >
     </theme-input>
@@ -42,12 +41,12 @@
       [control]="contactForm.controls.message"
       [errorDefinitions]="{ required: 'Message is required.' }"
       fieldId="message"
-      label="Message"
-      placeholder="MESSAGE"
+      [label]="pageData.fields.messagePlaceholder"
+      [placeholder]="pageData.fields.messagePlaceholder"
     >
     </theme-textarea>
     <theme-button class="max-w-max justify-self-end" type="submit"
-      >SEND MESSAGE
+      >{{ pageData.fields.actionLabel }}
     </theme-button>
   </form>
 </section>

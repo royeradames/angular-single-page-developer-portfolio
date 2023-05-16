@@ -4,6 +4,7 @@ import { isValidKey } from '../../utility/is-valid-key.utility';
 import { getControlName } from '../../utility/get-control-name.utility';
 import { FormGroupControlsInterface } from './model/form-group-controls.interface';
 import { ContactFormDataInterface } from './model/contact-form-data.interface';
+import { DataService } from '../../share/data.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,8 @@ import { ContactFormDataInterface } from './model/contact-form-data.interface';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
+  dataService = inject(DataService);
+  pageData: any = this.dataService.contactPageData.value;
   fb = inject(FormBuilder);
   contactForm = this.fb.group<
     FormGroupControlsInterface<ContactFormDataInterface>
@@ -25,6 +28,11 @@ export class ContactComponent {
     ],
     message: ['', { validators: [Validators.required], nonNullable: true }],
   });
+  constructor() {
+    this.dataService.contactPageData.subscribe((pageData) => {
+      this.pageData = pageData;
+    });
+  }
   getControlName = getControlName;
 
   ngOnInit(): void {}
