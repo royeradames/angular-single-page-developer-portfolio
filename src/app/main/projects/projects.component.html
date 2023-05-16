@@ -40,16 +40,9 @@
           'xl:flex bg-custom-dark-grey ': hovering[i] || clicked[i]
         }"
       >
-        <theme-link
-          [href]="project.projectLink"
-          [attr.target]="project.viewProjectOnNewTab ? '_blank' : ''"
-          >{{ projects.viewProjectText }}
-        </theme-link>
-        <theme-link
-          [href]="project.codeLink"
-          [attr.target]="project.viewCodeOnNewTab ? '_blank' : ''"
-          >{{ projects.viewCodeText }}</theme-link
-        >
+        <ng-container
+          *ngTemplateOutlet="projectLinks; context: { project: project }"
+        ></ng-container>
       </section>
     </div>
     <section class="grid gap-2 col-span-2">
@@ -59,16 +52,22 @@
       </p>
     </section>
     <section class="flex gap-5 col-span-2 flex-wrap xl:hidden">
-      <theme-link
-        [href]="project.projectLink"
-        [attr.target]="project.viewProjectOnNewTab ? '_blank' : ''"
-        >{{ projects.viewProjectText }}
-      </theme-link>
-      <theme-link
-        [href]="project.codeLink"
-        [attr.target]="project.viewCodeOnNewTab ? '_blank' : ''"
-        >{{ projects.viewCodeText }}</theme-link
-      >
+      <ng-container
+        *ngTemplateOutlet="projectLinks; context: { project: project }"
+      ></ng-container>
     </section>
   </section>
 </section>
+
+<ng-template #projectLinks let-project="project">
+  <theme-link
+    [href]="project.projectLink"
+    [attr.target]="project.viewProjectOnNewTab ? '_blank' : ''"
+    >{{ projects.viewProjectText }}
+  </theme-link>
+  <theme-link
+    [href]="project.codeLink"
+    [attr.target]="project.viewCodeOnNewTab ? '_blank' : ''"
+    >{{ projects.viewCodeText }}</theme-link
+  >
+</ng-template>
