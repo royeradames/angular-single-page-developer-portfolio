@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UserDataInterface } from '../../model/user.interface';
 import { DataService } from '../../share/data.service';
+import { UserDataInterface } from '../../model/userDataInterface';
 
 @Component({
   selector: 'app-about',

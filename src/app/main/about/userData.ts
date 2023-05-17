@@ -1,4 +1,4 @@
-import { UserDataInterface } from '../../model/user.interface';
+import { UserDataInterface } from '../../model/userDataInterface';
 
 export const userData: UserDataInterface = {
   sources: [
