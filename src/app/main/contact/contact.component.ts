@@ -13,7 +13,7 @@ import { DataService } from '../../share/data.service';
 })
 export class ContactComponent {
   dataService = inject(DataService);
-  pageData: any = this.dataService.contactPageData.value;
+  pageData = this.dataService.contactPageData.value;
   fb = inject(FormBuilder);
   contactForm = this.fb.group<
     FormGroupControlsInterface<ContactFormDataInterface>

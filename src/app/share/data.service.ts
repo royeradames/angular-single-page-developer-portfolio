@@ -3,7 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 import { UserDataInterface } from '../model/user.interface';
 import { createClient } from 'contentful';
 import { SourceInterface } from '../model/source.interface';
-import { IContactPage } from '../../../@types/generated/contentful';
 import { ImgInterface } from '../model/img.interface';
 
 export interface SocialLinksInterface {
@@ -23,6 +22,7 @@ export interface ProjectListInterface {
   viewProjectText: string;
   viewCodeText: string;
 }
+
 export interface ProjectInterface {
   title: string;
   projectLink: string;
@@ -34,13 +34,42 @@ export interface ProjectInterface {
   viewCodeOnNewTab: boolean;
 }
 
+export interface ContactPageInterface {
+  /** title */
+  title: string;
+
+  /** message */
+  message: string;
+
+  /** nameLabel */
+  nameLabel: string;
+
+  /** namePlaceholder */
+  namePlaceholder: string;
+
+  /** emailLabel */
+  emailLabel: string;
+
+  /** emailPlaceholder */
+  emailPlaceholder: string;
+
+  /** messageLabel */
+  messageLabel: string;
+
+  /** messagePlaceholder */
+  messagePlaceholder: string;
+
+  /** actionLabel */
+  actionLabel: string;
+}
+
 @Injectable({ providedIn: 'root' })
 export class DataService {
   data: any;
   user!: BehaviorSubject<UserDataInterface>;
   socialLinks!: BehaviorSubject<SocialLinksInterface>;
   projectList!: BehaviorSubject<ProjectListInterface>;
-  contactPageData!: BehaviorSubject<IContactPage>;
+  contactPageData!: BehaviorSubject<ContactPageInterface>;
 
   constructor() {}
 
@@ -62,7 +91,17 @@ export class DataService {
         client.getEntry(aboutPageEntryId),
       ]);
 
-    this.contactPageData = new BehaviorSubject<IContactPage>(aboutPageEntry);
+    this.contactPageData = new BehaviorSubject<ContactPageInterface>({
+      title: aboutPageEntry.fields.title,
+      message: aboutPageEntry.fields.message,
+      nameLabel: aboutPageEntry.fields.nameLabel,
+      namePlaceholder: aboutPageEntry.fields.namePlaceholder,
+      emailLabel: aboutPageEntry.fields.emailLabel,
+      emailPlaceholder: aboutPageEntry.fields.emailPlaceholder,
+      messageLabel: aboutPageEntry.fields.messageLabel,
+      messagePlaceholder: aboutPageEntry.fields.messagePlaceholder,
+      actionLabel: aboutPageEntry.fields.actionLabel,
+    });
     this.projectList = new BehaviorSubject<ProjectListInterface>({
       title: projectListEntry.fields.title,
       projects: projectListEntry.fields.projects.map((project: any) => {

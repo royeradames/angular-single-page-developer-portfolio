@@ -7,12 +7,12 @@
     <h1
       class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl lg:text-8xl"
     >
-      {{ pageData.fields.title }}
+      {{ pageData.title }}
     </h1>
     <p
       class="font-normal font-medium text-base leading-26 text-center md:text-lg"
     >
-      {{ pageData.fields.message }}
+      {{ pageData.message }}
     </p>
   </section>
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
@@ -20,8 +20,8 @@
       [control]="contactForm.controls.name"
       [errorDefinitions]="{ required: 'Name is required.' }"
       fieldId="name"
-      [label]="pageData.fields.nameLabel"
-      [placeholder]="pageData.fields.namePlaceholder"
+      [label]="pageData.nameLabel"
+      [placeholder]="pageData.namePlaceholder"
     >
     </theme-input>
     <theme-input
@@ -31,8 +31,8 @@
         email: 'Email must be a valid email address.'
       }"
       fieldId="email"
-      [label]="pageData.fields.emailLabel"
-      [placeholder]="pageData.fields.emailPlaceholder"
+      [label]="pageData.emailLabel"
+      [placeholder]="pageData.emailPlaceholder"
       type="email"
     >
     </theme-input>
@@ -41,12 +41,12 @@
       [control]="contactForm.controls.message"
       [errorDefinitions]="{ required: 'Message is required.' }"
       fieldId="message"
-      [label]="pageData.fields.messagePlaceholder"
-      [placeholder]="pageData.fields.messagePlaceholder"
+      [label]="pageData.messagePlaceholder"
+      [placeholder]="pageData.messagePlaceholder"
     >
     </theme-textarea>
     <theme-button class="max-w-max justify-self-end" type="submit"
-      >{{ pageData.fields.actionLabel }}
+      >{{ pageData.actionLabel }}
     </theme-button>
   </form>
 </section>
