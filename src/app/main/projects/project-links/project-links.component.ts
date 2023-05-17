@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import {
-  ProjectInterface,
-  ProjectListInterface,
-} from '../../../share/data.service';
+import { ProjectInterface } from '../../../model/project.interface';
+import { ProjectListInterface } from '../../../model/project-list.interface';
 
 @Component({
   selector: 'project-links[project][projects]',

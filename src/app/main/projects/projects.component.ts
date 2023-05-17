@@ -1,5 +1,5 @@
-import { Component, HostListener } from '@angular/core';
-import { DataService, ProjectListInterface } from '../../share/data.service';
+import { Component, HostListener, inject } from '@angular/core';
+import { DataService } from '../../share/data.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,13 +7,14 @@ import { DataService, ProjectListInterface } from '../../share/data.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
-  projects!: ProjectListInterface;
+  dataService = inject(DataService);
+  projects = this.dataService.projectList.value;
   hovering: boolean[] = [];
   clicked: boolean[] = [];
   windowWidth!: number;
 
-  constructor(dataService: DataService) {
-    dataService.projectList.subscribe((projectList) => {
+  constructor() {
+    this.dataService.projectList.subscribe((projectList) => {
       this.projects = projectList;
     });
 
