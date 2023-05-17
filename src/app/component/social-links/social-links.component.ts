@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../../share/data.service';
 
 @Component({
@@ -7,10 +7,9 @@ import { DataService } from '../../share/data.service';
   styleUrls: ['./social-links.component.scss'],
 })
 export class SocialLinksComponent {
-  private dataService = inject(DataService);
   socialLinks = this.dataService.socialLinks.value;
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.dataService.socialLinks.subscribe((data) => {
       this.socialLinks = data;
     });

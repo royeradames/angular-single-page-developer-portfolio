@@ -1,4 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DataService } from '../../share/data.service';
 
 @Component({
@@ -7,13 +7,12 @@ import { DataService } from '../../share/data.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
-  dataService = inject(DataService);
   projects = this.dataService.projectList.value;
   hovering: boolean[] = [];
   clicked: boolean[] = [];
   windowWidth!: number;
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.dataService.projectList.subscribe((projectList) => {
       this.projects = projectList;
     });
