@@ -2,66 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserDataInterface } from '../model/user.interface';
 import { createClient } from 'contentful';
-import { SourceInterface } from '../model/source.interface';
-import { ImgInterface } from '../model/img.interface';
-
-export interface SocialLinksInterface {
-  name: string;
-  nameLink: string;
-  github: string;
-  frontendMentor: string;
-  linkedin: string;
-  twitter: string;
-}
-
-export interface ProjectListInterface {
-  title: string;
-  projects: ProjectInterface[];
-  actionText: string;
-  actionLink: string;
-  viewProjectText: string;
-  viewCodeText: string;
-}
-
-export interface ProjectInterface {
-  title: string;
-  projectLink: string;
-  codeLink: string;
-  sources: SourceInterface[];
-  skills: string[];
-  image: ImgInterface;
-  viewProjectOnNewTab: boolean;
-  viewCodeOnNewTab: boolean;
-}
-
-export interface ContactPageInterface {
-  /** title */
-  title: string;
-
-  /** message */
-  message: string;
-
-  /** nameLabel */
-  nameLabel: string;
-
-  /** namePlaceholder */
-  namePlaceholder: string;
-
-  /** emailLabel */
-  emailLabel: string;
-
-  /** emailPlaceholder */
-  emailPlaceholder: string;
-
-  /** messageLabel */
-  messageLabel: string;
-
-  /** messagePlaceholder */
-  messagePlaceholder: string;
-
-  /** actionLabel */
-  actionLabel: string;
-}
+import { ContactPageInterface } from '../model/contact-page.intergace';
+import { SocialLinksInterface } from '../model/social-links.interface';
+import { ProjectListInterface } from '../model/project-list.interface';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
