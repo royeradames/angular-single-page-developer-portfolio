@@ -3,25 +3,32 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
 }
+@layer base {
+  html {
+    @apply smooth-scroll;
+  }
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label {
+    @apply font-space-grotesk;
+    @apply text-custom-foreground;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
-  font-family: "Roboto", sans-serif;
-  color: white;
-}
+  p {
+    @apply text-custom-primary;
+  }
 
-p {
-  color: #d9d9d9;
-}
-
-label {
-  opacity: 50%;
+  label {
+    @apply opacity-50;
+  }
 }
