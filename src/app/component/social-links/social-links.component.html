@@ -2,7 +2,7 @@
   class="flex flex-col sm:flex-row sm:justify-between gap-1 text-center justify-center"
 >
   <a
-    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-custom-white"
+    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-custom-foreground"
     [href]="socialLinks.nameLink"
   >
     {{ socialLinks.name }}
@@ -11,7 +11,7 @@
     <a
       *ngIf="socialLinks.github"
       [href]="socialLinks.github"
-      class="text-custom-white hover:text-custom-green"
+      class="text-custom-foreground hover:text-custom-accent"
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -20,7 +20,7 @@
     <a
       *ngIf="socialLinks.frontendMentor"
       [href]="socialLinks.frontendMentor"
-      class="text-custom-white hover:text-custom-green"
+      class="text-custom-foreground hover:text-custom-accent"
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -29,7 +29,7 @@
     <a
       *ngIf="socialLinks.linkedin"
       [href]="socialLinks.linkedin"
-      class="text-custom-white hover:text-custom-green"
+      class="text-custom-foreground hover:text-custom-accent"
       href="#"
       rel="noopener noreferrer"
       target="_blank"
@@ -39,7 +39,7 @@
     <a
       *ngIf="socialLinks.twitter"
       [href]="socialLinks.twitter"
-      class="text-custom-white hover:text-custom-green"
+      class="text-custom-foreground hover:text-custom-accent"
       href="#"
       rel="noopener noreferrer"
       target="_blank"

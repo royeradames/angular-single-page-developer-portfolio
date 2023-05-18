@@ -3,7 +3,7 @@
   <section class="flex place-items-center">
     <ng-content></ng-content>
     <!-- Use content projection for input/textarea -->
-    <span *ngIf="isInvalid" class="absolute right-0 text-custom-red">
+    <span *ngIf="isInvalid" class="absolute right-0 text-custom-alert">
       <svg
         fill="none"
         height="24"
@@ -17,9 +17,9 @@
       </svg>
     </span>
   </section>
-  <div *ngIf="isInvalid" class="grid gap-0.5 justify-end text-custom-red">
+  <div *ngIf="isInvalid" class="grid gap-0.5 justify-end text-custom-alert">
     <ng-container *ngFor="let error of errorMessages">
-      <p class="text-custom-red">{{ error }}</p>
+      <p class="text-custom-alert">{{ error }}</p>
     </ng-container>
   </div>
 </section>
