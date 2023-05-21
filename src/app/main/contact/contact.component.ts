@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { isValidKey } from '../../utility/is-valid-key.utility';
 import { getControlName } from '../../utility/get-control-name.utility';
 import { FormGroupControlsInterface } from './model/form-group-controls.interface';
 import { ContactFormDataInterface } from './model/contact-form-data.interface';
 import { DataService } from '../../share/data.service';
+import { errors } from 'workbox-build/build/lib/errors';
+declare let Email: any;
 
 @Component({
   selector: 'app-contact',
@@ -38,21 +40,36 @@ export class ContactComponent {
   ngOnInit(): void {}
 
   onSubmit() {
-    if (this.contactForm.valid) {
-      // send form data to server or perform any other action
-      console.log(this.contactForm.value);
-      this.contactForm.reset();
-      console.log(this.contactForm.value);
-    } else {
-      // mark all fields as touched to display validation errors
-      Object.keys(this.contactForm.controls).forEach((field) => {
-        if (isValidKey(field, this.contactForm.controls)) {
-          const control = this.contactForm.get(field);
-          if (control) {
-            control.markAsTouched({ onlySelf: true });
-          }
-        }
-      });
+    if (this.contactForm.invalid) {
+      this.markAsTouched(this.contactForm);
+      return;
     }
+
+    // get form values
+    const formData = this.contactForm.value;
+
+    // set up email data
+    const emailData = {
+      SecureToken: this.pageData.secureToken,
+      To: this.pageData.emailTo,
+      From: this.pageData.emailFrom,
+      Subject: `${formData.name} <${formData.email}>`,
+      Body: formData.message,
+    };
+
+    // send the email
+    Email.send(emailData)
+      .then((_message: any) => this.contactForm.reset())
+      .catch((_errors: any) => this.markAsTouched(this.contactForm));
+  }
+  markAsTouched(group: FormGroup) {
+    Object.keys(group.controls).forEach((field) => {
+      if (isValidKey(field, group.controls)) {
+        const control = group.get(field);
+        if (control) {
+          control.markAsTouched({ onlySelf: true });
+        }
+      }
+    });
   }
 }
