@@ -27,6 +27,7 @@
     "dotenv": "^16.0.3",
     "postcss": "^8.4.23",
     "rxjs": "~7.8.0",
+    "smtpts": "^1.0.3",
     "tailwindcss": "^3.3.2",
     "tslib": "^2.3.0",
     "workbox-build": "^6.5.4",

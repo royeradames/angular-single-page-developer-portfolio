@@ -1,12 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { isValidKey } from '../../utility/is-valid-key.utility';
-import { getControlName } from '../../utility/get-control-name.utility';
 import { FormGroupControlsInterface } from './model/form-group-controls.interface';
 import { ContactFormDataInterface } from './model/contact-form-data.interface';
 import { DataService } from '../../share/data.service';
-import { errors } from 'workbox-build/build/lib/errors';
-declare let Email: any;
+import { Email } from 'smtpts';
 
 @Component({
   selector: 'app-contact',
@@ -35,7 +33,6 @@ export class ContactComponent {
       this.pageData = pageData;
     });
   }
-  getControlName = getControlName;
 
   ngOnInit(): void {}
 
