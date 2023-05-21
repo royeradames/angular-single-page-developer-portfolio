@@ -13,5 +13,8 @@ export function facadeContactPageData(
     messageLabel: aboutPageEntry.fields.messageLabel,
     messagePlaceholder: aboutPageEntry.fields.messagePlaceholder,
     actionLabel: aboutPageEntry.fields.actionLabel,
+    emailTo: aboutPageEntry.fields.emailTo,
+    emailFrom: aboutPageEntry.fields.emailFrom,
+    secureToken: aboutPageEntry.fields.secureToken,
   };
 }

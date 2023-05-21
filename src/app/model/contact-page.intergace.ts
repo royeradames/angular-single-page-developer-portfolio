@@ -8,4 +8,7 @@ export interface ContactPageInterface {
   messageLabel: string;
   messagePlaceholder: string;
   actionLabel: string;
+  emailTo: string;
+  emailFrom: string;
+  secureToken: string;
 }
