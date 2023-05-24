@@ -7,7 +7,7 @@
     src="assets/svg/pattern-rings.svg"
   />
   <section
-    *ngFor="let item of skills"
+    *ngFor="let item of skillPageData"
     class="text-center sm:text-left md:grid md:gap-3.5"
   >
     <h1
@@ -15,7 +15,10 @@
     >
       {{ item.name }}
     </h1>
-    <p class="font-normal font-medium text-base leading-26 md:text-lg">
+    <p
+      *ngIf="item.text"
+      class="font-normal font-medium text-base leading-26 md:text-lg"
+    >
       {{ item.text }}
     </p>
   </section>

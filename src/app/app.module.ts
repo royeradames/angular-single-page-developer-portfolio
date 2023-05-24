@@ -7,7 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SocialLinksComponent } from './component/social-links/social-links.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { ProjectsComponent } from './main/projects/projects.component';
-import { SkillsComponent } from './main/skills/skills.component';
+import { SkillComponent } from './main/skills/skill.component';
 import { AboutComponent } from './main/about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
@@ -32,7 +32,7 @@ import { ProjectLinksComponent } from './main/projects/project-links/project-lin
     SocialLinksComponent,
     ContactComponent,
     ProjectsComponent,
-    SkillsComponent,
+    SkillComponent,
     AboutComponent,
     HeaderComponent,
     MainComponent,

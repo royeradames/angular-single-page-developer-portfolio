@@ -9,6 +9,8 @@ import { facadeProjectList } from './facadeProjectList';
 import { UserDataInterface } from '../model/userDataInterface';
 import { facadeUserData } from './facadeUserData';
 import { facadeSocialLinks } from './facadeSocialLinks';
+import { SkillPageInterface } from '../model/skill-page.interface';
+import { skillPageFacade } from './skill-page.facade';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -17,6 +19,7 @@ export class DataService {
   socialLinks!: BehaviorSubject<SocialLinksInterface>;
   projectList!: BehaviorSubject<ProjectListInterface>;
   contactPageData!: BehaviorSubject<ContactPageInterface>;
+  skillPageData!: BehaviorSubject<SkillPageInterface[]>;
 
   constructor() {}
 
@@ -30,13 +33,20 @@ export class DataService {
     const socialLinksEntryId = '3pl8dDzcamGNZA57CIIGkL';
     const projectListEntryId = '2NIJqNOAizI3EHZhUSR628';
     const aboutPageEntryId = 'Zo13npZTVYY16KerCmL26';
-    const [userEntry, socialLinksEntry, projectListEntry, aboutPageEntry]: any =
-      await Promise.all([
-        client.getEntry(userEntryId),
-        client.getEntry(socialLinksEntryId),
-        client.getEntry(projectListEntryId, { include: 3 }),
-        client.getEntry(aboutPageEntryId),
-      ]);
+    const skillPageEntryId = '7em2OvzAS2qeQyi4heZuN6';
+    const [
+      userEntry,
+      socialLinksEntry,
+      projectListEntry,
+      aboutPageEntry,
+      skillPageEntry,
+    ]: any = await Promise.all([
+      client.getEntry(userEntryId),
+      client.getEntry(socialLinksEntryId),
+      client.getEntry(projectListEntryId, { include: 3 }),
+      client.getEntry(aboutPageEntryId),
+      client.getEntry(skillPageEntryId),
+    ]);
 
     this.contactPageData = new BehaviorSubject<ContactPageInterface>(
       facadeContactPageData(aboutPageEntry)
@@ -50,6 +60,10 @@ export class DataService {
 
     this.socialLinks = new BehaviorSubject<SocialLinksInterface>(
       facadeSocialLinks(socialLinksEntry)
+    );
+
+    this.skillPageData = new BehaviorSubject<SkillPageInterface[]>(
+      skillPageFacade(skillPageEntry)
     );
   }
 }
