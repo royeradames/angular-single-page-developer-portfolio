@@ -1,5 +1,5 @@
 <section
-  class="grid border-t border-b border-solid border-custom-foreground py-10 gap-5 sm:grid-cols-2 xl:grid-cols-3 xl:border-b-0 xl:pt-20 xl:pb-0 relative"
+  class="flex flex-wrap border-t border-b border-solid border-custom-foreground py-10 gap-10 xl:border-b-0 xl:pt-20 xl:pb-0 relative px-[10%] justify-center"
   id="skills"
 >
   <img
@@ -8,20 +8,17 @@
   />
   <section
     *ngFor="let item of skillPageData"
-    class="text-center sm:text-left md:grid md:gap-3.5"
+    class="grid gap-3.5 place-items-center"
   >
-    <div [innerHTML]="item.svg" class="overflow-hidden w-24 h-24"></div>
+    <div
+      [innerHTML]="item.svg"
+      class="overflow-hidden w-24 h-24 flex place-items-center"
+    ></div>
     <h1
-      class="font-normal font-bold text-2xl md:text-5xl leading-40 tracking-tighter"
+      class="font-normal font-medium text-base leading-26 md:text-lg"
       *ngIf="item.name"
     >
       {{ item.name }}
     </h1>
-    <p
-      *ngIf="item.text"
-      class="font-normal font-medium text-base leading-26 md:text-lg"
-    >
-      {{ item.text }}
-    </p>
   </section>
 </section>
