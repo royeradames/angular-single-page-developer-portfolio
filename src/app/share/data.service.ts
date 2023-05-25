@@ -11,6 +11,7 @@ import { facadeUserData } from './facadeUserData';
 import { facadeSocialLinks } from './facadeSocialLinks';
 import { SkillPageInterface } from '../model/skill-page.interface';
 import { skillPageFacade } from './skill-page.facade';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -21,7 +22,7 @@ export class DataService {
   contactPageData!: BehaviorSubject<ContactPageInterface>;
   skillPageData!: BehaviorSubject<SkillPageInterface[]>;
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {}
 
   async loadData() {
     const client = createClient({
@@ -63,7 +64,7 @@ export class DataService {
     );
 
     this.skillPageData = new BehaviorSubject<SkillPageInterface[]>(
-      skillPageFacade(skillPageEntry)
+      skillPageFacade(skillPageEntry, this.sanitizer)
     );
   }
 }
