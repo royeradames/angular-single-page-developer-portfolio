@@ -2,49 +2,26 @@
   class="flex flex-col sm:flex-row sm:justify-between gap-1 text-center justify-center"
 >
   <a
-    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-custom-foreground"
+    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-custom-foreground flex place-items-center gap-2"
     [href]="socialLinks.nameLink"
   >
-    {{ socialLinks.name }}
+    <div
+      [innerHTML]="socialLinks.logo"
+      class="text-custom-foreground hover:text-custom-accent fill-current stroke-current"
+    ></div>
+    <p class="text-custom-foreground hover:text-custom-accent">
+      {{ socialLinks.name }}
+    </p>
   </a>
   <nav class="flex gap-5 justify-center mt-5 sm:mt-0 place-items-center">
     <a
-      *ngIf="socialLinks.github"
-      [href]="socialLinks.github"
+      *ngFor="let socialMedia of socialLinks.socialMedias"
+      [href]="socialMedia.link"
       class="text-custom-foreground hover:text-custom-accent"
       rel="noopener noreferrer"
       target="_blank"
+      [innerHTML]="socialMedia.svg"
     >
-      <svg-github></svg-github>
-    </a>
-    <a
-      *ngIf="socialLinks.frontendMentor"
-      [href]="socialLinks.frontendMentor"
-      class="text-custom-foreground hover:text-custom-accent"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <svg-frontend-mentor></svg-frontend-mentor>
-    </a>
-    <a
-      *ngIf="socialLinks.linkedin"
-      [href]="socialLinks.linkedin"
-      class="text-custom-foreground hover:text-custom-accent"
-      href="#"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <svg-linkedin></svg-linkedin>
-    </a>
-    <a
-      *ngIf="socialLinks.twitter"
-      [href]="socialLinks.twitter"
-      class="text-custom-foreground hover:text-custom-accent"
-      href="#"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <svg-twitter></svg-twitter>
     </a>
   </nav>
 </section>

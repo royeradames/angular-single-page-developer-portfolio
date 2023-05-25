@@ -9,18 +9,17 @@ import { facadeProjectList } from './facadeProjectList';
 import { UserDataInterface } from '../model/userDataInterface';
 import { facadeUserData } from './facadeUserData';
 import { facadeSocialLinks } from './facadeSocialLinks';
-import { SkillPageInterface } from '../model/skill-page.interface';
+import { LinkInterface } from '../model/link.interface';
 import { skillPageFacade } from './skill-page.facade';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  data: any;
   user!: BehaviorSubject<UserDataInterface>;
   socialLinks!: BehaviorSubject<SocialLinksInterface>;
   projectList!: BehaviorSubject<ProjectListInterface>;
   contactPageData!: BehaviorSubject<ContactPageInterface>;
-  skillPageData!: BehaviorSubject<SkillPageInterface[]>;
+  skillPageData!: BehaviorSubject<LinkInterface[]>;
 
   constructor(private sanitizer: DomSanitizer) {}
 
@@ -60,10 +59,10 @@ export class DataService {
     );
 
     this.socialLinks = new BehaviorSubject<SocialLinksInterface>(
-      facadeSocialLinks(socialLinksEntry)
+      facadeSocialLinks(socialLinksEntry, this.sanitizer)
     );
 
-    this.skillPageData = new BehaviorSubject<SkillPageInterface[]>(
+    this.skillPageData = new BehaviorSubject<LinkInterface[]>(
       skillPageFacade(skillPageEntry, this.sanitizer)
     );
   }
