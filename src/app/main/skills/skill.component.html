@@ -14,11 +14,9 @@
       [innerHTML]="item.svg"
       class="overflow-hidden w-24 h-24 flex place-items-center"
     ></div>
-    <h1
-      class="font-normal font-medium text-base leading-26 md:text-lg"
-      *ngIf="item.name"
-    >
-      {{ item.name }}
-    </h1>
+
+    <theme-link [href]="item.link" [target]="'_blank'">{{
+      item.name
+    }}</theme-link>
   </section>
 </section>

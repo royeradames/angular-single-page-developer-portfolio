@@ -8,8 +8,8 @@ export function skillPageFacade(
   return skillPageEntry.fields.skills.map((skill: any) => {
     return {
       name: skill.fields.name,
-      text: skill.fields?.text || '',
-      svg: sanitizer.bypassSecurityTrustHtml(skill.fields?.svg || ''),
+      link: skill.fields.link,
+      svg: sanitizer.bypassSecurityTrustHtml(skill.fields.svg),
     };
   });
 }
