@@ -7,11 +7,12 @@ import { DataService } from '../../share/data.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
-  userData = this.dataService.user.value;
+  AboutPageData = this.dataService.aboutPageData.value;
 
   constructor(private dataService: DataService) {
-    this.dataService.user.subscribe((user) => {
-      this.userData = user;
+    this.dataService.aboutPageData.subscribe((user) => {
+      this.AboutPageData = user;
+      console.log(user);
     });
   }
 }

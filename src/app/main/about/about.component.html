@@ -12,34 +12,35 @@
   />
   <picture class="layout-image z-10">
     <source
-      *ngFor="let source of userData.sources"
+      *ngFor="let source of AboutPageData.sources"
       [media]="source.media"
       [srcset]="source.src"
     />
     <img
-      [alt]="userData.img.src"
-      [ngSrc]="userData.img.alt"
-      [height]="userData.img.height"
-      [width]="userData.img.width"
+      [alt]="AboutPageData.img.alt"
+      [ngSrc]="AboutPageData.img.src"
+      [height]="AboutPageData.img.height"
+      [width]="AboutPageData.img.width"
     />
   </picture>
+
   <h1
     class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl layout-heading md:text-start lg:text-8xl z-10"
   >
-    {{ userData.greeting }}
+    {{ AboutPageData.greeting }}
     <span class="underline underline-offset-9 decoration-custom-accent">{{
-      userData.name
+      AboutPageData.name
     }}</span
     >.
   </h1>
   <p
     class="font-normal font-medium text-base leading-26 text-center md:text-lg layout-message md:text-start"
   >
-    {{ userData.about }}
+    {{ AboutPageData.about }}
   </p>
   <theme-link
-    [href]="userData.link"
+    [href]="AboutPageData.link"
     class="inline-block max-w-max self-center layout-action"
-    >{{ userData.actionLabel }}
+    >{{ AboutPageData.actionLabel }}
   </theme-link>
 </section>

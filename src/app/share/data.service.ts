@@ -6,7 +6,7 @@ import { SocialLinksInterface } from '../model/social-links.interface';
 import { ProjectListInterface } from '../model/project-list.interface';
 import { facadeContactPageData } from './facadeContactPageData';
 import { facadeProjectList } from './facadeProjectList';
-import { UserDataInterface } from '../model/userDataInterface';
+import { AboutPageDataInterface } from '../model/aboutPageDataInterface';
 import { facadeUserData } from './facadeUserData';
 import { facadeSocialLinks } from './facadeSocialLinks';
 import { LinkInterface } from '../model/link.interface';
@@ -17,7 +17,7 @@ import { FaviconService } from './favicon.service';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  user!: BehaviorSubject<UserDataInterface>;
+  aboutPageData!: BehaviorSubject<AboutPageDataInterface>;
   socialLinks!: BehaviorSubject<SocialLinksInterface>;
   projectList!: BehaviorSubject<ProjectListInterface>;
   contactPageData!: BehaviorSubject<ContactPageInterface>;
@@ -69,7 +69,7 @@ export class DataService {
     this.projectList = new BehaviorSubject<ProjectListInterface>(
       facadeProjectList(projectListEntry)
     );
-    this.user = new BehaviorSubject<UserDataInterface>(
+    this.aboutPageData = new BehaviorSubject<AboutPageDataInterface>(
       facadeUserData(userEntry)
     );
 
