@@ -2,8 +2,9 @@
   .layout {
     display: grid;
     grid-template:
+      ". . image" 90px
       ". . image" 1fr
-      "heading heading image"
+      "heading heading image" auto
       ". . image" 60px
       "message . image"
       ". . image" 34px
@@ -26,6 +27,12 @@
       grid-area: image;
       //overlap with heading
       grid-column: 2 / span 2;
+    }
+
+    &-social {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      place-self: stretch;
     }
   }
 }
