@@ -5,3 +5,10 @@ export interface LinkInterface {
   link: string;
   svg: SafeHtml;
 }
+
+export interface SkillPageDataInterface {
+  title: string;
+  showButtonText: string;
+  hideButtonText: string;
+  Skills: LinkInterface[];
+}

@@ -8,7 +8,7 @@
     src="assets/svg/pattern-rings.svg"
   />
   <section
-    *ngFor="let item of skillPageData"
+    *ngFor="let item of skillPageData.Skills"
     class="grid gap-3.5 place-items-center"
   >
     <div
@@ -25,13 +25,13 @@
     *ngIf="!isExpanded"
     (click)="toggleIsExpanded()"
     class="absolute right-0 bottom-5 md:hidden"
-    >More</theme-button
+    >{{ skillPageData.showButtonText }}</theme-button
   >
   <theme-link
     *ngIf="isExpanded"
     [href]="'#skills'"
     (click)="toggleIsExpanded()"
-    class="absolute right-0 bottom-5 md:hidden"
-    >Hide</theme-link
+    class="absolute right-0 bottom-6 md:hidden"
+    >{{ skillPageData.hideButtonText }}</theme-link
   >
 </section>

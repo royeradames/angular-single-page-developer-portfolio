@@ -9,7 +9,7 @@ import { facadeProjectList } from './facadeProjectList';
 import { AboutPageDataInterface } from '../model/aboutPageDataInterface';
 import { facadeUserData } from './facadeUserData';
 import { facadeSocialLinks } from './facadeSocialLinks';
-import { LinkInterface } from '../model/link.interface';
+import { LinkInterface, SkillPageDataInterface } from '../model/link.interface';
 import { skillPageFacade } from './skill-page.facade';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Title } from '@angular/platform-browser';
@@ -21,7 +21,7 @@ export class DataService {
   socialLinks!: BehaviorSubject<SocialLinksInterface>;
   projectList!: BehaviorSubject<ProjectListInterface>;
   contactPageData!: BehaviorSubject<ContactPageInterface>;
-  skillPageData!: BehaviorSubject<LinkInterface[]>;
+  skillPageData!: BehaviorSubject<SkillPageDataInterface>;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -77,7 +77,7 @@ export class DataService {
       facadeSocialLinks(socialLinksEntry, this.sanitizer)
     );
 
-    this.skillPageData = new BehaviorSubject<LinkInterface[]>(
+    this.skillPageData = new BehaviorSubject<SkillPageDataInterface>(
       skillPageFacade(skillPageEntry, this.sanitizer)
     );
   }
