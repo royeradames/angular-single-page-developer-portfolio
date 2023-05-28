@@ -45,6 +45,12 @@
     </div>
     <section class="grid gap-2 col-span-2">
       <h1 class="text-2xl">{{ project.title }}</h1>
+      <p
+        class="font-normal font-medium text-base leading-26 md:text-lg"
+        *ngIf="project.description"
+      >
+        {{ project.description }}
+      </p>
       <p class="flex gap-5 text-lg">
         <span *ngFor="let skill of project.skills">{{ skill }}</span>
       </p>

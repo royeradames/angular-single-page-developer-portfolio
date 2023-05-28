@@ -6,9 +6,10 @@ export function facadeProjectList(projectListEntry: any): ProjectListInterface {
     projects: projectListEntry.fields.projects.map((project: any) => {
       return {
         title: project.fields.title,
+        description: project.fields.description,
         projectLink: project.fields.projectLink,
         codeLink: project.fields.codeLink,
-        sources: project.fields.sources.map((source: any) => {
+        sources: project.fields.sources?.map((source: any) => {
           return {
             src: source.fields.img.fields.file.url,
             media: source.fields.media,

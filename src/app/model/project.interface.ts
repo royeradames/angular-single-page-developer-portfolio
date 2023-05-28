@@ -3,9 +3,10 @@ import { ImgInterface } from './img.interface';
 
 export interface ProjectInterface {
   title: string;
+  description?: string;
   projectLink: string;
   codeLink: string;
-  sources: SourceInterface[];
+  sources?: SourceInterface[];
   skills: string[];
   image: ImgInterface;
   viewProjectOnNewTab: boolean;
