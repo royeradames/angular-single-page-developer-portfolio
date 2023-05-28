@@ -15,7 +15,10 @@ import { DomSanitizer, Meta } from '@angular/platform-browser';
 import { Title } from '@angular/platform-browser';
 import { FaviconService } from './favicon.service';
 import { environment } from '../../environments/environment';
-import { headMetaDataFacade } from './head-meta-data.facade';
+import {
+  headMetaDataFacade,
+  HeadMetaDataInterface,
+} from './head-meta-data.facade';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -31,9 +34,8 @@ export class DataService {
     private faviconService: FaviconService,
     private metaService: Meta
   ) {}
-  loadHeadMetaData(headMetaDataEntry: any, titleService: Title): void {
-    const HeadMetaData = headMetaDataFacade(headMetaDataEntry);
-    titleService.setTitle(HeadMetaData.title);
+  loadHeadMetaData(HeadMetaData: HeadMetaDataInterface): void {
+    this.titleService.setTitle(HeadMetaData.title);
     this.faviconService.setFavicon(HeadMetaData.icon);
 
     this.metaService.updateTag({
@@ -78,7 +80,8 @@ export class DataService {
       client.getEntry(headMetaDataEntryId),
     ]);
 
-    this.loadHeadMetaData(headMetaDataEntry, this.titleService);
+    const HeadMetaData = headMetaDataFacade(headMetaDataEntry);
+    this.loadHeadMetaData(HeadMetaData);
     this.contactPageData = new BehaviorSubject<ContactPageInterface>(
       facadeContactPageData(aboutPageEntry)
     );
