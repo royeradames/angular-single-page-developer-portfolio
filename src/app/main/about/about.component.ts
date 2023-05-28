@@ -12,7 +12,6 @@ export class AboutComponent {
   constructor(private dataService: DataService) {
     this.dataService.aboutPageData.subscribe((user) => {
       this.AboutPageData = user;
-      console.log(user);
     });
   }
 }
