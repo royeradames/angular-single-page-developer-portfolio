@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ThemeLinkComponent {
   @Input() href = '';
-  @Input() target: null | string = null;
+  @Input() target: null | '_blank' = null;
 }
