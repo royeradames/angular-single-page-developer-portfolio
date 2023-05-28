@@ -11,10 +11,11 @@ import { facadeUserData } from './facadeUserData';
 import { facadeSocialLinks } from './facadeSocialLinks';
 import { SkillPageDataInterface } from '../model/link.interface';
 import { skillPageFacade } from './skill-page.facade';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Meta } from '@angular/platform-browser';
 import { Title } from '@angular/platform-browser';
 import { FaviconService } from './favicon.service';
 import { environment } from '../../environments/environment';
+import { headMetaDataFacade } from './head-meta-data.facade';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -27,13 +28,27 @@ export class DataService {
   constructor(
     private sanitizer: DomSanitizer,
     private titleService: Title,
-    private faviconService: FaviconService
+    private faviconService: FaviconService,
+    private metaService: Meta
   ) {}
   loadHeadMetaData(headMetaDataEntry: any, titleService: Title): void {
-    titleService.setTitle(headMetaDataEntry.fields.title);
-    this.faviconService.setFavicon(
-      headMetaDataEntry.fields.icon.fields.file.url
-    );
+    const HeadMetaData = headMetaDataFacade(headMetaDataEntry);
+    titleService.setTitle(HeadMetaData.title);
+    this.faviconService.setFavicon(HeadMetaData.icon);
+
+    this.metaService.updateTag({
+      name: 'og:title',
+      content: HeadMetaData.title,
+    });
+    this.metaService.updateTag({
+      name: 'og:description',
+      content: HeadMetaData.description,
+    });
+    this.metaService.updateTag({ name: 'og:url', content: HeadMetaData.url });
+    this.metaService.updateTag({
+      name: 'og:image',
+      content: HeadMetaData.previewImage,
+    });
   }
   async loadData() {
     const client = createClient({
