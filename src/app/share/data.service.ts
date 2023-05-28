@@ -9,11 +9,12 @@ import { facadeProjectList } from './facadeProjectList';
 import { AboutPageDataInterface } from '../model/aboutPageDataInterface';
 import { facadeUserData } from './facadeUserData';
 import { facadeSocialLinks } from './facadeSocialLinks';
-import { LinkInterface, SkillPageDataInterface } from '../model/link.interface';
+import { SkillPageDataInterface } from '../model/link.interface';
 import { skillPageFacade } from './skill-page.facade';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Title } from '@angular/platform-browser';
 import { FaviconService } from './favicon.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -36,16 +37,16 @@ export class DataService {
   }
   async loadData() {
     const client = createClient({
-      space: 'kmmvo7glwotb',
-      environment: 'master',
-      accessToken: 'f1_jmI8jf6_6qWjQEhewDlErAo4bCSaNw7OCsKo-eRs',
+      space: environment.contentful.space,
+      environment: environment.contentful.environment,
+      accessToken: environment.contentful.accessToken,
     });
-    const userEntryId = '6CFGkHkvZseNUjIZOMAe4X';
-    const socialLinksEntryId = '3pl8dDzcamGNZA57CIIGkL';
-    const projectListEntryId = '2NIJqNOAizI3EHZhUSR628';
-    const aboutPageEntryId = 'Zo13npZTVYY16KerCmL26';
-    const skillPageEntryId = '7em2OvzAS2qeQyi4heZuN6';
-    const headMetaDataEntryId = 'kCMVZVGOdk4ORn27u2GIt';
+    const userEntryId = environment.contentful.userEntryId;
+    const socialLinksEntryId = environment.contentful.socialLinksEntryId;
+    const projectListEntryId = environment.contentful.projectListEntryId;
+    const aboutPageEntryId = environment.contentful.aboutPageEntryId;
+    const skillPageEntryId = environment.contentful.skillPageEntryId;
+    const headMetaDataEntryId = environment.contentful.headMetaDataEntryId;
     const [
       userEntry,
       socialLinksEntry,
