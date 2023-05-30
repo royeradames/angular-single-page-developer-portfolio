@@ -37,7 +37,8 @@
         class="absolute gap-14 flex-col place-items-center bg-opacity-60 w-full h-full justify-center sm:max-xl:hidden"
         [ngClass]="{
           hidden: !hovering[i] && !clicked[i],
-          'xl:flex bg-custom-secondary ': hovering[i] || clicked[i]
+          'xl:flex bg-custom-secondary ':
+            (hovering[i] || clicked[i]) && windowWidth >= 1280
         }"
         [project]="project"
         [projects]="projects"
