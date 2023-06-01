@@ -1,0 +1,15 @@
+<section>
+  <h2 class="sr-only">Logo</h2>
+  <a
+    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-custom-foreground flex place-items-center gap-2 justify-center"
+    [href]="socialLinks.nameLink"
+  >
+    <div
+      [innerHTML]="socialLinks.logo"
+      class="text-custom-foreground hover:text-custom-accent fill-current stroke-current"
+    ></div>
+    <p class="text-custom-foreground hover:text-custom-accent">
+      {{ socialLinks.name }}
+    </p>
+  </a>
+</section>

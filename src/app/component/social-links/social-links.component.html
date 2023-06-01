@@ -1,29 +1,12 @@
-<section
-  class="flex flex-col sm:flex-row sm:justify-between gap-1 text-center justify-center"
->
-  <h2 class="sr-only">Extra section</h2>
+<nav class="flex gap-5 justify-center mt-5 sm:mt-0 place-items-center">
+  <h2 class="sr-only">Social Links</h2>
   <a
-    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-custom-foreground flex place-items-center gap-2 justify-center"
-    [href]="socialLinks.nameLink"
+    *ngFor="let socialMedia of socialLinks.socialMedias"
+    [href]="socialMedia.link"
+    class="text-custom-foreground hover:text-custom-accent"
+    rel="noopener noreferrer"
+    target="_blank"
+    [innerHTML]="socialMedia.svg"
   >
-    <div
-      [innerHTML]="socialLinks.logo"
-      class="text-custom-foreground hover:text-custom-accent fill-current stroke-current"
-    ></div>
-    <p class="text-custom-foreground hover:text-custom-accent">
-      {{ socialLinks.name }}
-    </p>
   </a>
-  <nav class="flex gap-5 justify-center mt-5 sm:mt-0 place-items-center">
-    <h2 class="sr-only">Social Links</h2>
-    <a
-      *ngFor="let socialMedia of socialLinks.socialMedias"
-      [href]="socialMedia.link"
-      class="text-custom-foreground hover:text-custom-accent"
-      rel="noopener noreferrer"
-      target="_blank"
-      [innerHTML]="socialMedia.svg"
-    >
-    </a>
-  </nav>
-</section>
+</nav>
