@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../share/data.service';
 
 @Component({
-  selector: 'app-theme-logo',
+  selector: 'theme-logo',
   templateUrl: './theme-logo.component.html',
   styleUrls: ['./theme-logo.component.scss'],
 })

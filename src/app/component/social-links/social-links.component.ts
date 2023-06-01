@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../share/data.service';
 
 @Component({
-  selector: 'app-social-links',
+  selector: 'theme-social-links',
   templateUrl: './social-links.component.html',
   styleUrls: ['./social-links.component.scss'],
 })
