@@ -1,5 +1,5 @@
 <section class="grid gap-10 gap-y-16 gap-x-6 md:grid-cols-2" id="projects">
-  <section class="flex justify-between place-items-center md:col-span-2">
+  <div class="flex justify-between place-items-center md:col-span-2">
     <h2
       class="font-normal font-bold text-4xl leading-40 tracking-tighter md:text-7xl lg:text-8xl"
     >
@@ -8,7 +8,7 @@
     <theme-link [href]="projects.actionLink">{{
       projects.actionText
     }}</theme-link>
-  </section>
+  </div>
 
   <section
     *ngFor="let project of projects.projects; let i = index"
@@ -44,7 +44,7 @@
         [projects]="projects"
       ></project-links>
     </div>
-    <section class="grid gap-2 col-span-2">
+    <div class="grid gap-2 col-span-2">
       <h2 class="text-2xl">{{ project.title }}</h2>
       <p
         class="font-normal font-medium text-base leading-26 md:text-lg"
@@ -55,7 +55,7 @@
       <p class="flex gap-5 text-lg">
         <span *ngFor="let skill of project.skills">{{ skill }}</span>
       </p>
-    </section>
+    </div>
     <project-links
       class="flex gap-5 col-span-2 flex-wrap xl:hidden"
       [project]="project"
