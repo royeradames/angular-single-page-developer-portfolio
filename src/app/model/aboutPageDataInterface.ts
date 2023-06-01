@@ -8,5 +8,6 @@ export interface AboutPageDataInterface {
   greeting: string;
   about: string;
   link: string;
+  pageAnchor: string;
   actionLabel: string;
 }

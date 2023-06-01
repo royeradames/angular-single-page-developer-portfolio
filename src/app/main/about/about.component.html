@@ -31,9 +31,10 @@
     class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl layout-heading md:text-start lg:text-8xl z-10"
   >
     {{ AboutPageData.greeting }}
-    <span class="underline underline-offset-9 decoration-custom-accent">{{
-      AboutPageData.name
-    }}</span
+    <a
+      class="underline underline-offset-9 decoration-custom-accent"
+      [href]="AboutPageData.pageAnchor"
+      >{{ AboutPageData.name }}</a
     >.
   </h2>
   <p

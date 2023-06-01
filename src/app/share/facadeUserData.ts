@@ -7,6 +7,7 @@ export function facadeUserData(userEntry: any): AboutPageDataInterface {
     about: userEntry.fields.about,
     actionLabel: userEntry.fields.actionLabel,
     link: userEntry.fields.link,
+    pageAnchor: userEntry.fields.pageAnchor,
     img: {
       height: userEntry.fields.img.fields.file.details.image.height,
       width: userEntry.fields.img.fields.file.details.image.width,
