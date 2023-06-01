@@ -3,7 +3,7 @@
     class="absolute z-0 bottom-[-8%] right-[70%]"
     src="assets/svg/pattern-rings.svg"
   />
-  <section class="grid max-lg:gap-5">
+  <div class="grid max-lg:gap-5">
     <h2
       class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl lg:text-8xl"
     >
@@ -14,7 +14,7 @@
     >
       {{ pageData.message }}
     </p>
-  </section>
+  </div>
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
     <theme-input
       [control]="contactForm.controls.name"
@@ -45,8 +45,11 @@
       [placeholder]="pageData.messagePlaceholder"
     >
     </theme-textarea>
-    <theme-button class="max-w-max justify-self-end" type="submit"
-      >{{ pageData.actionLabel }}
-    </theme-button>
+    <article>
+      <h3 class="sr-only">{{ pageData.actionLabel }}</h3>
+      <theme-button class="max-w-max justify-self-end" type="submit"
+        >{{ pageData.actionLabel }}
+      </theme-button>
+    </article>
   </form>
 </section>
