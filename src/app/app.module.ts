@@ -15,10 +15,6 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeButtonComponent } from './component/theme-button/theme-button.component';
 import { ThemeLinkComponent } from './component/theme-link/theme-link.component';
-import { LinkedinComponent } from './component/social-links/svg/linkedin/linkedin.component';
-import { GithubComponent } from './component/social-links/svg/github/github.component';
-import { FrontendMentorComponent } from './component/social-links/svg/frontend-mentor/frontend-mentor.component';
-import { TwitterComponent } from './component/social-links/svg/twitter/twitter.component';
 import { ThemeFormFieldComponent } from './component/theme-form-field/theme-form-field.component';
 import { ThemeInputComponent } from './component/theme-input/theme-input.component';
 import { ThemeTextareaComponent } from './component/theme-textarea/theme-textarea.component';
@@ -26,6 +22,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { DataService } from './share/data.service';
 import { ProjectLinksComponent } from './main/projects/project-links/project-links.component';
 import { ThemeLogoComponent } from './component/theme-logo/theme-logo.component';
+
 @NgModule({
   declarations: [
     ThemeLinkComponent,
@@ -39,10 +36,6 @@ import { ThemeLogoComponent } from './component/theme-logo/theme-logo.component'
     MainComponent,
     FooterComponent,
     ThemeButtonComponent,
-    LinkedinComponent,
-    GithubComponent,
-    FrontendMentorComponent,
-    TwitterComponent,
     ThemeFormFieldComponent,
     ThemeInputComponent,
     ThemeTextareaComponent,
