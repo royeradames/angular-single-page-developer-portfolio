@@ -27,6 +27,7 @@ export class DataService {
   projectList!: BehaviorSubject<ProjectListInterface>;
   contactPageData!: BehaviorSubject<ContactPageInterface>;
   skillPageData!: BehaviorSubject<SkillPageDataInterface>;
+  headMetaData!: BehaviorSubject<HeadMetaDataInterface>;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -80,8 +81,10 @@ export class DataService {
       client.getEntry(headMetaDataEntryId),
     ]);
 
-    const HeadMetaData = headMetaDataFacade(headMetaDataEntry);
-    this.loadHeadMetaData(HeadMetaData);
+    this.headMetaData = new BehaviorSubject<HeadMetaDataInterface>(
+      headMetaDataFacade(headMetaDataEntry)
+    );
+    this.loadHeadMetaData(this.headMetaData.value);
     this.contactPageData = new BehaviorSubject<ContactPageInterface>(
       facadeContactPageData(aboutPageEntry)
     );

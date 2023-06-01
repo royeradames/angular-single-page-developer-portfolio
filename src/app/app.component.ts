@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from './share/data.service';
+import { HeadMetaDataInterface } from './share/head-meta-data.facade';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-single-page-developer-portfolio';
+  headMetaData = this.dataService.headMetaData.value;
+  constructor(private dataService: DataService) {
+    this.dataService.headMetaData.subscribe((headMetaData) => {
+      this.headMetaData = headMetaData;
+    });
+  }
 }
