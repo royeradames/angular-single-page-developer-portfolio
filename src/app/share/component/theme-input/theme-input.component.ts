@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { FormFieldBase } from '../../share/form-field-base.shared';
+import { FormFieldBase } from '../../form-field-base.shared';
 
 @Component({
   selector:

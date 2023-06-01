@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { SocialLinksComponent } from './component/social-links/social-links.component';
+import { SocialLinksComponent } from './share/component/social-links/social-links.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { ProjectsComponent } from './main/projects/projects.component';
 import { SkillComponent } from './main/skills/skill.component';
@@ -13,15 +13,15 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ThemeButtonComponent } from './component/theme-button/theme-button.component';
-import { ThemeLinkComponent } from './component/theme-link/theme-link.component';
-import { ThemeFormFieldComponent } from './component/theme-form-field/theme-form-field.component';
-import { ThemeInputComponent } from './component/theme-input/theme-input.component';
-import { ThemeTextareaComponent } from './component/theme-textarea/theme-textarea.component';
+import { ThemeButtonComponent } from './share/component/theme-button/theme-button.component';
+import { ThemeLinkComponent } from './share/component/theme-link/theme-link.component';
+import { ThemeFormFieldComponent } from './share/component/theme-form-field/theme-form-field.component';
+import { ThemeInputComponent } from './share/component/theme-input/theme-input.component';
+import { ThemeTextareaComponent } from './share/component/theme-textarea/theme-textarea.component';
 import { NgOptimizedImage } from '@angular/common';
 import { DataService } from './share/data.service';
 import { ProjectLinksComponent } from './main/projects/project-links/project-links.component';
-import { ThemeLogoComponent } from './component/theme-logo/theme-logo.component';
+import { ThemeLogoComponent } from './share/component/theme-logo/theme-logo.component';
 
 @NgModule({
   declarations: [
