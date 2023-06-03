@@ -10,7 +10,7 @@ export class ProjectsComponent {
   projects = this.dataService.projectList.value;
   hovering: boolean[] = [];
   clicked: boolean[] = [];
-  windowWidth!: number;
+  windowWidth = window.innerWidth;
 
   constructor(private dataService: DataService) {
     this.dataService.projectList.subscribe((projectList) => {
