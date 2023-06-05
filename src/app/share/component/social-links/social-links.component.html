@@ -3,7 +3,7 @@
   <a
     *ngFor="let socialMedia of socialLinks.socialMedias"
     [href]="socialMedia.link"
-    class="text-light-foreground hover:text-light-accent"
+    class="text-light-foreground hover:text-light-accent dark:text-dark-foreground dark:hover:text-dark-accent"
     rel="noopener noreferrer"
     target="_blank"
     [innerHTML]="socialMedia.svg"

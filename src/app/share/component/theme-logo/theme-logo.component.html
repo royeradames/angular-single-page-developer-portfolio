@@ -1,14 +1,16 @@
 <section>
   <h3 class="sr-only">Logo</h3>
   <a
-    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-light-foreground flex place-items-center gap-2 justify-center"
+    class="font-normal font-bold text-2xl leading-8 tracking-tighter sm:text-3xl text-light-foreground dark:text-dark-foreground flex place-items-center gap-2 justify-center"
     [href]="socialLinks.nameLink"
   >
     <div
       [innerHTML]="socialLinks.logo"
-      class="text-light-foreground hover:text-light-accent fill-current stroke-current"
+      class="text-light-foreground hover:text-light-accent dark:text-dark-foreground dark:hover:text-dark-accent fill-current stroke-current"
     ></div>
-    <p class="text-light-foreground hover:text-light-accent">
+    <p
+      class="text-light-foreground hover:text-light-accent dark:text-dark-foreground dark:hover:text-dark-accent"
+    >
       {{ socialLinks.name }}
     </p>
   </a>

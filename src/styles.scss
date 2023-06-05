@@ -12,6 +12,7 @@
   html {
     @apply smooth-scroll;
   }
+
   body,
   h1,
   h2,
@@ -30,5 +31,25 @@
 
   label {
     @apply opacity-50;
+  }
+
+  .dark body,
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6,
+  .dark label {
+    @apply font-space-grotesk;
+    @apply text-dark-foreground;
+  }
+
+  .dark p {
+    @apply text-dark-primary;
+  }
+
+  .dark label {
+    @apply opacity-100;
   }
 }

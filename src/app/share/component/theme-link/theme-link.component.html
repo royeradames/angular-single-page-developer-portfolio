@@ -1,10 +1,10 @@
 <a
   [href]="href"
   [attr.target]="target"
-  class="relative font-space-grotesk font-bold text-base text-gray-800 tracking-widest hover:text-light-accent py-2 rounded"
+  class="relative font-space-grotesk font-bold text-base text-gray-800 tracking-widest hover:text-light-accent dark:hover:text-dark-accent py-2 rounded"
 >
   <span
-    class="inline-block text-light-foreground underline underline-offset-9 decoration-light-accent hover:text-light-accent"
+    class="inline-block text-light-foreground dark:text-dark-foreground underline underline-offset-9 decoration-light-accent hover:text-light-accent dark:decoration-dark-accent dark:hover:text-dark-accent"
   >
     <ng-content></ng-content>
   </span>
