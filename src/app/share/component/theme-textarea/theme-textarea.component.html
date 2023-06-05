@@ -5,12 +5,12 @@
     <textarea
       [formControl]="control"
       [ngClass]="base.inputClasses"
-      class="bg-transparent text-white border-b border-solid w-full focus:outline-none resize-y text-custom-foreground p-5"
+      class="bg-transparent text-white border-b border-solid w-full focus:outline-none resize-y text-light-foreground p-5"
       id="{{ fieldId }}"
       placeholder="{{ placeholder }}"
       rows="4"
     ></textarea>
-    <span *ngIf="base.isInvalid" class="absolute right-0 text-custom-alert">
+    <span *ngIf="base.isInvalid" class="absolute right-0 text-light-alert">
       <svg
         fill="none"
         height="24"
@@ -24,12 +24,9 @@
       </svg>
     </span>
   </div>
-  <div
-    *ngIf="base.isInvalid"
-    class="grid gap-0.5 justify-end text-custom-alert"
-  >
+  <div *ngIf="base.isInvalid" class="grid gap-0.5 justify-end text-light-alert">
     <ng-container *ngFor="let error of base.errorMessages">
-      <p class="text-custom-alert">{{ error }}</p>
+      <p class="text-light-alert">{{ error }}</p>
     </ng-container>
   </div>
 </section>
