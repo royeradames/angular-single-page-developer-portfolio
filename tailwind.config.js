@@ -12,18 +12,18 @@ module.exports = {
       },
       colors: {
         light: {
-          primary: "#4685ff",
+          primary: "#201009AA",
           secondary: "#ffffff",
+          accent: "#4685ff",
+          foreground: "#171d26",
           background: "#f9f0eb",
-          accent: "#ffb084",
-          foreground: "#201009",
           alert: "#FF6F5B",
         },
         dark: {
           primary: "#D9D9D9",
           secondary: "#242424",
-          background: "#151515",
           accent: "#4EE1A0",
+          background: "#151515",
           foreground: "#FFFFFF",
           alert: "#FF6F5B",
         },
