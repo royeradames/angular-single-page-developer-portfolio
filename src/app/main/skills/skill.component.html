@@ -7,8 +7,9 @@
     [ngClass]="{ 'h-auto': isExpanded }"
   >
     <img
-      class="absolute bottom-[0] left-[80%]"
+      class="absolute bottom-[0] left-[80%] select-none"
       src="assets/svg/pattern-rings.svg"
+      alt=""
     />
     <section
       *ngFor="let item of skillPageData.Skills"
