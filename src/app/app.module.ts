@@ -22,6 +22,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { DataService } from './share/data.service';
 import { ProjectLinksComponent } from './main/projects/project-links/project-links.component';
 import { ThemeLogoComponent } from './share/component/theme-logo/theme-logo.component';
+import { ThemeToggleComponent } from './share/component/theme-toggle/theme-toggle.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ThemeLogoComponent } from './share/component/theme-logo/theme-logo.comp
     ThemeTextareaComponent,
     ProjectLinksComponent,
     ThemeLogoComponent,
+    ThemeToggleComponent,
   ],
   imports: [
     ReactiveFormsModule,
