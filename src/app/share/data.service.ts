@@ -47,6 +47,12 @@ export class DataService {
       name: 'og:description',
       content: HeadMetaData.description,
     });
+    this.metaService.addTags([
+      {
+        name: 'description',
+        content: HeadMetaData.description,
+      },
+    ]);
     this.metaService.updateTag({ name: 'og:url', content: HeadMetaData.url });
     this.metaService.updateTag({
       name: 'og:image',
