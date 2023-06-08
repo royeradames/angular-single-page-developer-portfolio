@@ -2,6 +2,8 @@ import { ProjectListInterface } from '../model/project-list.interface';
 
 export function facadeProjectList(projectListEntry: any): ProjectListInterface {
   return {
+    pageAnchor: projectListEntry.fields.pageAnchor,
+    id: projectListEntry.fields.id,
     title: projectListEntry.fields.title,
     projects: projectListEntry.fields.projects.map((project: any) => {
       return {
