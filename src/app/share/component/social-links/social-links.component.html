@@ -6,7 +6,8 @@
     class="text-light-foreground hover:text-light-accent dark:text-dark-foreground dark:hover:text-dark-accent"
     rel="noopener noreferrer"
     target="_blank"
-    [innerHTML]="socialMedia.svg"
   >
+    <span class="sr-only">{{ socialMedia.description }}</span>
+    <div [innerHTML]="socialMedia.svg"></div>
   </a>
 </nav>

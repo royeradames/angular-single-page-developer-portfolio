@@ -13,6 +13,7 @@ export function facadeSocialLinks(
       (socialMedia: any) => {
         return {
           name: socialMedia.fields.name,
+          description: socialMedia.fields.description,
           link: socialMedia.fields.link,
           svg: sanitizer.bypassSecurityTrustHtml(socialMedia.fields.svg),
         };
