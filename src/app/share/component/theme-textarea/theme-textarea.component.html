@@ -1,13 +1,16 @@
 <section class="grid gap-0.5 relative">
   <h3 class="sr-only">{{ label }}</h3>
-  <label class="sr-only" for="{{ fieldId }}">{{ label }}</label>
+  <label
+    class="text-light-foreground dark:text-dark-foreground"
+    for="{{ fieldId }}"
+    >{{ label }}</label
+  >
   <div class="flex place-items-center">
     <textarea
       [formControl]="control"
       [ngClass]="base.inputClasses"
-      class="bg-transparent text-white border-b border-solid w-full focus:outline-none resize-y text-light-foreground dark:text-dark-foreground p-5"
+      class="bg-transparent border-b border-solid w-full focus:outline-none resize-y p-5 text-light-primary dark:text-dark-primary"
       id="{{ fieldId }}"
-      placeholder="{{ placeholder }}"
       rows="4"
     ></textarea>
     <span
