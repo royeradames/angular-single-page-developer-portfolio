@@ -10,7 +10,8 @@ export class ProjectsComponent {
   projects = this.dataService.projectList.value;
   hovering: boolean[] = [];
   clicked: boolean[] = [];
-  windowWidth = window.innerWidth;
+  private desktopSize = 1280;
+  desktopWidth = this.getDesktopWidth(window.innerWidth, this.desktopSize);
 
   constructor(private dataService: DataService) {
     this.dataService.projectList.subscribe((projectList) => {
@@ -25,6 +26,13 @@ export class ProjectsComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.windowWidth = event.target.innerWidth;
+    this.desktopWidth = this.getDesktopWidth(
+      event.target.innerWidth,
+      this.desktopSize
+    );
+  }
+
+  getDesktopWidth(windowWidth: number, desktopSize: number): boolean {
+    return windowWidth >= desktopSize;
   }
 }
