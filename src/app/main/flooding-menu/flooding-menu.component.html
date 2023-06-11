@@ -1,0 +1,15 @@
+<section
+  id="floating-menu"
+  [ngClass]="{
+    hidden: !isScrolled,
+    'static fixed bottom-10 right-10 z-50': isScrolled
+  }"
+>
+  <h2 class="sr-only">floating menu</h2>
+  <a
+    href="#"
+    class="bg-light-secondary text-light-foreground inline-block hover:text-light-secondary dark:hover:bg-dark-accent hover:bg-light-accent w-5 h-5 rounded-full flex justify-center items-start"
+    ><span class="sr-only">to top of page</span
+    ><span class="inline-block">^</span></a
+  >
+</section>
