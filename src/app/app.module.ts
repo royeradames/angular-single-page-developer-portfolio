@@ -23,6 +23,7 @@ import { DataService } from './share/data.service';
 import { ProjectLinksComponent } from './main/projects/project-links/project-links.component';
 import { ThemeLogoComponent } from './share/component/theme-logo/theme-logo.component';
 import { ThemeToggleComponent } from './share/component/theme-toggle/theme-toggle.component';
+import { ThemeMenuComponent } from './share/theme-menu/theme-menu.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ThemeToggleComponent } from './share/component/theme-toggle/theme-toggl
     ProjectLinksComponent,
     ThemeLogoComponent,
     ThemeToggleComponent,
+    ThemeMenuComponent,
   ],
   imports: [
     ReactiveFormsModule,
