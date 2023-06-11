@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { DataService } from '../../share/data.service';
-import { WindowRef } from '../../share/window-ref.injectable';
+import { GlobalRef } from '../../share/window-ref.injectable';
 
 @Component({
   selector: 'app-projects',
@@ -13,11 +13,11 @@ export class ProjectsComponent {
   clicked: boolean[] = [];
   private desktopSize = 1280;
   desktopWidth = this.getDesktopWidth(
-    this.windowRef.nativeWindow.innerWidth,
+    this.globalRef.nativeWindow.innerWidth,
     this.desktopSize
   );
 
-  constructor(private dataService: DataService, private windowRef: WindowRef) {
+  constructor(private dataService: DataService, private globalRef: GlobalRef) {
     this.dataService.projectList.subscribe((projectList) => {
       this.projects = projectList;
     });

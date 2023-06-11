@@ -25,7 +25,7 @@ import { ThemeLogoComponent } from './share/component/theme-logo/theme-logo.comp
 import { ThemeToggleComponent } from './share/component/theme-toggle/theme-toggle.component';
 import { ThemeMenuComponent } from './share/theme-menu/theme-menu.component';
 import { FloodingMenuComponent } from './main/flooding-menu/flooding-menu.component';
-import { WindowRef } from './share/window-ref.injectable';
+import { GlobalRef } from './share/window-ref.injectable';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { WindowRef } from './share/window-ref.injectable';
       : [],
   ],
   providers: [
-    WindowRef,
+    GlobalRef,
     {
       provide: APP_INITIALIZER,
       useFactory: (dataService: DataService) => async () =>

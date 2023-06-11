@@ -5,9 +5,18 @@ function _window(): Window {
   return window;
 }
 
+function _document(): Document {
+  // return the global native browser document object
+  return document;
+}
+
 @Injectable()
-export class WindowRef {
+export class GlobalRef {
   get nativeWindow(): Window {
     return _window();
+  }
+
+  get nativeDocument(): Document {
+    return _document();
   }
 }

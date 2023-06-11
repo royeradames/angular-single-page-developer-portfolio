@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { WindowRef } from '../../share/window-ref.injectable';
+import { GlobalRef } from '../../share/window-ref.injectable';
 
 @Component({
   selector: 'flooding-menu',
@@ -9,9 +9,9 @@ import { WindowRef } from '../../share/window-ref.injectable';
 export class FloodingMenuComponent {
   isScrolled = false;
 
-  constructor(private windowRef: WindowRef) {}
+  constructor(private globalRef: GlobalRef) {}
   ngOnInit() {
-    this.windowRef.nativeWindow.addEventListener(
+    this.globalRef.nativeWindow.addEventListener(
       'scroll',
       () => this.scrollEvent,
       true
@@ -19,7 +19,7 @@ export class FloodingMenuComponent {
   }
 
   ngOnDestroy() {
-    this.windowRef.nativeWindow.removeEventListener(
+    this.globalRef.nativeWindow.removeEventListener(
       'scroll',
       this.scrollEvent,
       true
@@ -28,6 +28,6 @@ export class FloodingMenuComponent {
 
   @HostListener('window:scroll', ['$event'])
   scrollEvent() {
-    this.isScrolled = this.windowRef.nativeWindow.scrollY >= 200; // Change 200 to the scroll depth you want
+    this.isScrolled = this.globalRef.nativeWindow.scrollY >= 200; // Change 200 to the scroll depth you want
   }
 }
