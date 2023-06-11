@@ -1,7 +1,7 @@
 <section
   id="floating-menu"
   [ngClass]="{
-    hidden: !isScrolled,
+    hidden: !isScrolled || isFooterVisible,
     'static fixed bottom-10 right-10 z-50': isScrolled
   }"
 >

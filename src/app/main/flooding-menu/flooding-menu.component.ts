@@ -8,7 +8,7 @@ import { GlobalRef } from '../../share/window-ref.injectable';
 })
 export class FloodingMenuComponent {
   isScrolled = false;
-
+  isFooterVisible = false;
   constructor(private globalRef: GlobalRef) {}
   ngOnInit() {
     this.globalRef.nativeWindow.addEventListener(
@@ -29,5 +29,13 @@ export class FloodingMenuComponent {
   @HostListener('window:scroll', ['$event'])
   scrollEvent() {
     this.isScrolled = this.globalRef.nativeWindow.scrollY >= 200; // Change 200 to the scroll depth you want
+
+    const footerElement =
+      this.globalRef.nativeDocument.getElementById('footer-links');
+    if (!footerElement) return;
+    const footerRect = footerElement.getBoundingClientRect();
+    this.isFooterVisible =
+      Math.round(footerRect.bottom) <=
+      this.globalRef.nativeWindow.innerHeight + Math.round(footerRect.height);
   }
 }
