@@ -35,10 +35,10 @@
       </picture>
       <project-links
         *ngIf="desktopWidth"
-        class="absolute gap-14 flex-col place-items-center bg-opacity-60 w-full h-full justify-center sm:max-xl:hidden"
+        class="absolute gap-14 flex-col place-items-center w-full h-full justify-center sm:max-xl:hidden"
         [ngClass]="{
           hidden: !hovering[i] && !clicked[i],
-          'xl:flex bg-light-secondary dark:bg-dark-secondary ':
+          'xl:flex bg-light-secondary/80 dark:bg-dark-secondary/80 ':
             hovering[i] || clicked[i]
         }"
         [project]="project"
