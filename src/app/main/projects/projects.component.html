@@ -20,11 +20,12 @@
     *ngFor="let project of projects.projects; let i = index"
     class="grid gap-5 grid-cols-2"
   >
-    <div
-      class="col-span-2 flex relative xl:cursor-pointer"
+    <button
+      class="col-span-2 flex relative"
       (mouseover)="hovering[i] = true"
       (mouseout)="hovering[i] = false"
       (click)="desktopWidth ? (clicked[i] = !clicked[i]) : null"
+      [disabled]="desktopWidth ? true : false"
     >
       <picture>
         <source
@@ -50,7 +51,7 @@
         [project]="project"
         [projects]="projects"
       ></project-links>
-    </div>
+    </button>
     <div class="grid gap-2 col-span-2">
       <h3 class="text-2xl">{{ project.title }}</h3>
       <p
