@@ -6,7 +6,9 @@
     class="flex flex-wrap border-t border-b border-solid border-light-foreground dark:border-dark-foreground py-10 gap-10 xl:border-b-0 xl:pt-20 xl:pb-0 relative px-[10%] justify-center h-96 overflow-hidden md:h-auto"
     [ngClass]="{ 'h-auto': isExpanded }"
   >
-    <ul>
+    <ul
+      class="flex flex-wrap gap-y-10 gap-x-6 place-items-center justify-items-center justify-center"
+    >
       <ng-container *ngIf="skillPageData.Skills">
         <li *ngFor="let item of skillPageData.Skills">
           <theme-link [href]="item.link" [target]="'_blank'">
