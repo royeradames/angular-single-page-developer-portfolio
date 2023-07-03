@@ -1,4 +1,9 @@
-<section class="grid gap-10 gap-y-16 gap-x-6 md:grid-cols-2" [id]="projects.id">
+<section
+  role="region"
+  class="grid gap-10 gap-y-16 gap-x-6 md:grid-cols-2"
+  [id]="projects.id"
+  role="region"
+>
   <div class="flex justify-between place-items-center md:col-span-2">
     <h2
       class="font-normal font-bold text-4xl leading-40 tracking-tighter md:text-7xl lg:text-8xl"
@@ -11,6 +16,7 @@
   </div>
 
   <section
+    role="region"
     *ngFor="let project of projects.projects; let i = index"
     class="grid gap-5 grid-cols-2"
   >

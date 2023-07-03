@@ -1,4 +1,4 @@
-<section id="skills">
+<section role="region" id="skills">
   <h2 class="sr-only">
     {{ skillPageData.title }}
   </h2>
@@ -7,6 +7,7 @@
     [ngClass]="{ 'h-auto': isExpanded }"
   >
     <section
+      role="region"
       *ngFor="let item of skillPageData.Skills"
       class="grid gap-3.5 place-items-center"
     >
