@@ -11,7 +11,7 @@
       class="bg-transparent border-b border-solid w-full focus:outline-none resize-y p-5 text-light-primary dark:text-dark-primary"
       id="{{ fieldId }}"
       rows="4"
-      aria-describedby="{{ fieldId }}-error-icon {{ fieldId }}-errors"
+      attr.aria-describedby="{{ fieldId }}-error-icon {{ fieldId }}-errors"
     ></textarea>
     <span
       *ngIf="base.isInvalid"

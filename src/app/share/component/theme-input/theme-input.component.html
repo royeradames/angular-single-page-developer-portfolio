@@ -11,7 +11,7 @@
       [type]="type"
       class="bg-transparent text-light-primary dark:text-dark-primary border-b border-solid w-full focus:outline-none relative p-5"
       id="{{ fieldId }}"
-      aria-describedby="{{ fieldId }}-error-icon {{ fieldId }}-errors"
+      attr.aria-describedby="{{ fieldId }}-error-icon {{ fieldId }}-errors"
     />
     <span
       *ngIf="base.isInvalid"
