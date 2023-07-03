@@ -20,7 +20,12 @@
       {{ pageData.message }}
     </p>
   </div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="grid gap-10">
+  <form
+    (ngSubmit)="onSubmit()"
+    [formGroup]="contactForm"
+    class="grid gap-10"
+    role="form"
+  >
     <theme-input
       [control]="contactForm.controls.name"
       [errorDefinitions]="{ required: 'Name is required.' }"
@@ -50,11 +55,8 @@
       [placeholder]="pageData.messagePlaceholder"
     >
     </theme-textarea>
-    <article>
-      <h3 class="sr-only">{{ pageData.actionLabel }}</h3>
-      <theme-button class="max-w-max justify-self-end" type="submit"
-        >{{ pageData.actionLabel }}
-      </theme-button>
-    </article>
+    <theme-button class="max-w-max justify-self-end" type="submit"
+      >{{ pageData.actionLabel }}
+    </theme-button>
   </form>
 </section>

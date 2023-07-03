@@ -1,5 +1,4 @@
-<section role="region" class="grid gap-0.5 relative">
-  <h3 class="sr-only">{{ label }}</h3>
+<div class="grid gap-0.5 relative">
   <label
     class="text-light-foreground dark:text-dark-foreground"
     for="{{ fieldId }}"
@@ -12,6 +11,7 @@
       [type]="type"
       class="bg-transparent text-light-primary dark:text-dark-primary border-b border-solid w-full focus:outline-none relative p-5"
       id="{{ fieldId }}"
+      aria-describedby="{{ fieldId }}-error-icon {{ fieldId }}-errors"
     />
     <span
       *ngIf="base.isInvalid"
@@ -23,20 +23,25 @@
         viewBox="0 0 24 24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        id="{{ fieldId }}-error-icon"
       >
-        <desc>Error</desc>
+        <title>Error</title>
         <circle cx="12" cy="12" r="11.5" stroke="#FF6F5B" />
         <rect fill="#FF6F5B" height="9" rx="1" width="2" x="11" y="6" />
         <rect fill="#FF6F5B" height="2" rx="1" width="2" x="11" y="17" />
       </svg>
     </span>
   </div>
-  <div
+  <p
     *ngIf="base.isInvalid"
+    id="{{ fieldId }}-errors"
     class="grid gap-0.5 justify-end text-light-alert dark:text-dark-alert"
   >
-    <ng-container *ngFor="let error of base.errorMessages">
-      <p class="text-light-alert dark:text-dark-alert">{{ error }}</p>
-    </ng-container>
-  </div>
-</section>
+    <span
+      *ngFor="let error of base.errorMessages"
+      class="text-light-alert dark:text-dark-alert inline-block"
+      >{{ error }}.</span
+    >
+  </p>
+</div>
