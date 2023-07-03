@@ -12,6 +12,7 @@
       id="{{ fieldId }}"
       rows="4"
       attr.aria-describedby="{{ fieldId }}-error-icon {{ fieldId }}-errors"
+      aria-live="polite"
     ></textarea>
     <span
       *ngIf="base.isInvalid"
