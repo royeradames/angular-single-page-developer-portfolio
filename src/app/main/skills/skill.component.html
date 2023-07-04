@@ -1,4 +1,8 @@
-<section role="region" id="skills">
+<section
+  role="region"
+  id="skills"
+  class="bg-pattern-rings bg-[160% 0%] bg-no-repeat"
+>
   <h2 class="sr-only">
     {{ skillPageData.title }}
   </h2>
@@ -9,8 +13,8 @@
     <ul
       class="flex flex-wrap gap-y-10 gap-x-6 place-items-center justify-items-center justify-center"
     >
-      <ng-container *ngIf="skillPageData.Skills">
-        <li *ngFor="let item of skillPageData.Skills">
+      <ng-container *ngIf="skills">
+        <li *ngFor="let item of skills">
           <theme-link [href]="item.link" [target]="'_blank'">
             <div class="grid gap-3.5 place-items-center">
               <div
@@ -31,23 +35,16 @@
       </li>
     </ul>
 
-    <theme-button
-      *ngIf="!isExpanded"
-      (click)="toggleIsExpanded()"
-      class="absolute right-0 bottom-5 md:hidden"
-      >{{ skillPageData.showButtonText }}</theme-button
-    >
-    <theme-link
-      *ngIf="isExpanded"
-      [href]="'#skills'"
-      (click)="toggleIsExpanded()"
-      class="absolute right-0 bottom-6 md:hidden"
-      >{{ skillPageData.hideButtonText }}</theme-link
-    >
     <img
       class="absolute bottom-[0] left-[80%] select-none"
       src="assets/svg/pattern-rings.svg"
       alt=""
     />
+    <theme-button
+      (click)="toggleIsExpanded()"
+      [aria-expanded]="isExpanded"
+      class="absolute right-0 bottom-5 md:hidden"
+      >{{ spanButtonText }}</theme-button
+    >
   </div>
 </section>
