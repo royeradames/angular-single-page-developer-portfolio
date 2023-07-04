@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "pattern-rings": "url('assets/svg/pattern-rings.svg')",
+      },
       textUnderlineOffset: {
         9: "17px",
       },
