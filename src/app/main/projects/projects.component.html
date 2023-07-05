@@ -27,6 +27,7 @@
       (click)="desktopWidth ? (clicked[i] = !clicked[i]) : null"
       [disabled]="desktopWidth ? false : true"
     >
+      <span class="rs-only">Show links</span>
       <picture>
         <source
           *ngFor="let source of project.sources"
