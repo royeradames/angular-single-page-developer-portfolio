@@ -25,7 +25,7 @@
       (mouseover)="hovering[i] = true"
       (mouseout)="hovering[i] = false"
       (click)="desktopWidth ? (clicked[i] = !clicked[i]) : null"
-      [disabled]="desktopWidth ? true : false"
+      [disabled]="desktopWidth ? false : true"
     >
       <picture>
         <source
