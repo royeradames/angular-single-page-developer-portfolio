@@ -1,8 +1,4 @@
-<section
-  role="region"
-  id="skills"
-  class="bg-pattern-rings bg-[160% 0%] bg-no-repeat"
->
+<section role="region" id="skills" class="bg-no-repeat">
   <h2 class="sr-only">
     {{ skillPageData.title }}
   </h2>
@@ -14,7 +10,12 @@
       class="flex flex-wrap gap-y-10 gap-x-6 place-items-center justify-items-center justify-center"
     >
       <ng-container *ngIf="skills">
-        <li *ngFor="let item of skills">
+        <li
+          *ngFor="let item of skills; let index = index"
+          [class.max-md:hidden]="
+            (index >= 10 && !isExpanded) || isButtonVisible
+          "
+        >
           <theme-link [href]="item.link" [target]="'_blank'">
             <div class="grid gap-3.5 place-items-center">
               <div
@@ -41,6 +42,7 @@
       alt=""
     />
     <theme-button
+      #expandButton
       (click)="toggleIsExpanded()"
       [aria-expanded]="isExpanded"
       class="absolute right-0 bottom-5 md:hidden"
