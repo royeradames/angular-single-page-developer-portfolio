@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { DataService } from '../../share/data.service';
-import { GlobalRef } from '../../share/window-ref.injectable';
+import { GlobalRef } from '../../share/global-ref/global-ref.service';
 
 @Component({
   selector: 'app-projects',

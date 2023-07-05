@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { GlobalRef } from '../../share/window-ref.injectable';
+import { GlobalRef } from '../../share/global-ref/global-ref.service';
 
 @Component({
   selector: 'flooding-menu',
