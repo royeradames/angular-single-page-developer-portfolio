@@ -19,8 +19,10 @@ export class SkillComponent implements AfterViewInit {
     private elementRef: ElementRef
   ) {}
   ngAfterViewInit(): void {
-    this.isButtonVisible =
-      !this.expandButton.nativeElement.classList.contains('hidden');
+    if (this.expandButton.nativeElement) {
+      this.isButtonVisible =
+        !this.expandButton.nativeElement.classList.contains('hidden');
+    }
   }
 
   scrollToSkills(): void {
