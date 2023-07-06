@@ -1,9 +1,4 @@
-<article
-  role="region"
-  class="grid gap-5 lg:grid-cols-2 lg:gap-40 relative"
-  id="contact"
-  aria-labelledby="contact-label"
->
+<div class="grid gap-5 lg:grid-cols-2 lg:gap-40 relative" id="contact">
   <img
     class="absolute z-0 bottom-[-8%] right-[70%] select-none"
     src="assets/svg/pattern-rings.svg"
@@ -17,6 +12,7 @@
       {{ pageData.title }}
     </h2>
     <p
+      id="contact-description"
       class="font-normal font-medium text-base leading-26 text-center md:text-lg"
     >
       {{ pageData.message }}
@@ -28,6 +24,7 @@
     class="grid gap-10"
     role="form"
     aria-labelledby="contact-label"
+    aria-describedby="contact-description"
   >
     <theme-input
       [control]="contactForm.controls.name"
@@ -62,4 +59,4 @@
       >{{ pageData.actionLabel }}
     </theme-button>
   </form>
-</article>
+</div>
