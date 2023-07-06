@@ -28,17 +28,10 @@ export class ContactComponent {
     ],
     message: ['', { validators: [Validators.required], nonNullable: true }],
   });
-  constructor() {
-    this.dataService.contactPageData.subscribe((pageData) => {
-      this.pageData = pageData;
-    });
-  }
-
-  ngOnInit(): void {}
-
   onSubmit() {
     if (this.contactForm.invalid) {
       this.markAsTouched(this.contactForm);
+      this.focusOnInvalidInput();
       return;
     }
 
@@ -68,5 +61,14 @@ export class ContactComponent {
         }
       }
     });
+  }
+
+  focusOnInvalidInput() {
+    const invalidInput = document.querySelector(
+      'form .ng-invalid'
+    ) as HTMLElement | null;
+    if (!invalidInput) return;
+    if (!invalidInput.focus) return;
+    invalidInput.focus();
   }
 }
