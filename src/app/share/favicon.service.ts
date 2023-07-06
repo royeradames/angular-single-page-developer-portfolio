@@ -1,17 +1,19 @@
-import { Injectable, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Injectable } from '@angular/core';
+import { GlobalRef } from './global-ref/global-ref.service';
 
 @Injectable({ providedIn: 'root' })
 export class FaviconService {
-  constructor(@Inject(DOCUMENT) private document: any) {}
+  constructor(private globalRef: GlobalRef) {}
 
   setFavicon(url: string): void {
-    const link =
-      this.document.querySelector('link[rel*="icon"]') ||
-      this.document.createElement('link');
+    const link: HTMLLinkElement =
+      this.globalRef.nativeDocument.querySelector('link[rel*="icon"]') ||
+      this.globalRef.nativeDocument.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
     link.href = url;
-    this.document.getElementsByTagName('head')[0].appendChild(link);
+    this.globalRef.nativeDocument
+      .getElementsByTagName('head')[0]
+      .appendChild(link);
   }
 }

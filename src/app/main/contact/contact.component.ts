@@ -5,6 +5,7 @@ import { FormGroupControlsInterface } from './model/form-group-controls.interfac
 import { ContactFormDataInterface } from './model/contact-form-data.interface';
 import { DataService } from '../../share/data.service';
 import { Email } from 'smtpts';
+import { GlobalRef } from '../../share/global-ref/global-ref.service';
 
 @Component({
   selector: 'app-contact',
@@ -28,6 +29,8 @@ export class ContactComponent {
     ],
     message: ['', { validators: [Validators.required], nonNullable: true }],
   });
+
+  constructor(private globalRef: GlobalRef) {}
   onSubmit() {
     if (this.contactForm.invalid) {
       this.markAsTouched(this.contactForm);
@@ -64,7 +67,7 @@ export class ContactComponent {
   }
 
   focusOnInvalidInput() {
-    const invalidInput = document.querySelector(
+    const invalidInput = this.globalRef.nativeDocument.querySelector(
       'form .ng-invalid'
     ) as HTMLElement | null;
     if (!invalidInput) return;
