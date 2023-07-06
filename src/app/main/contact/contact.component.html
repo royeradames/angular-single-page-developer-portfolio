@@ -1,7 +1,8 @@
-<section
+<article
   role="region"
   class="grid gap-5 lg:grid-cols-2 lg:gap-40 relative"
   id="contact"
+  aria-labelledby="contact-label"
 >
   <img
     class="absolute z-0 bottom-[-8%] right-[70%] select-none"
@@ -10,6 +11,7 @@
   />
   <div class="grid max-lg:gap-5">
     <h2
+      id="contact-label"
       class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl lg:text-8xl"
     >
       {{ pageData.title }}
@@ -25,6 +27,7 @@
     [formGroup]="contactForm"
     class="grid gap-10"
     role="form"
+    aria-labelledby="contact-label"
   >
     <theme-input
       [control]="contactForm.controls.name"
@@ -59,4 +62,4 @@
       >{{ pageData.actionLabel }}
     </theme-button>
   </form>
-</section>
+</article>

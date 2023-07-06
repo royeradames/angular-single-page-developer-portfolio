@@ -1,7 +1,8 @@
-<section
+<article
   class="grid place-items-center gap-5m gap-5 layout md:place-items-start md:gap-0 relative"
   id="about"
   role="region"
+  aria-label="about-label"
 >
   <picture class="layout-image z-10">
     <source
@@ -18,6 +19,7 @@
   </picture>
 
   <h2
+    id="about-label"
     class="font-normal font-bold text-4xl leading-40 text-center tracking-tighter md:text-7xl layout-heading md:text-start lg:text-8xl z-10"
   >
     <a [href]="AboutPageData.pageAnchor"
@@ -48,4 +50,4 @@
     src="assets/svg/pattern-circle.svg"
     alt=""
   />
-</section>
+</article>
