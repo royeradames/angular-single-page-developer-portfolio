@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormFieldBase } from '../../form-field-base.shared';
+import { UtilityService } from '../../../utility/utility.service';
 
 @Component({
   selector:
@@ -17,7 +18,8 @@ export class ThemeInputComponent implements OnChanges {
   @Input() errorDefinitions!: { [key: string]: string };
 
   base!: FormFieldBase;
-
+  isControlRequired = this.utilityService.isControlRequired;
+  constructor(private utilityService: UtilityService) {}
   ngOnChanges() {
     this.base = new FormFieldBase({
       control: this.control,
