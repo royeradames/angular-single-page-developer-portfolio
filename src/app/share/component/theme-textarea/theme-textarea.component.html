@@ -38,6 +38,7 @@
     *ngIf="base.isInvalid"
     id="{{ fieldId }}-errors"
     class="grid gap-0.5 justify-end text-light-alert dark:text-dark-alert"
+    aria-live="polite"
   >
     <span
       *ngFor="let error of base.errorMessages"
