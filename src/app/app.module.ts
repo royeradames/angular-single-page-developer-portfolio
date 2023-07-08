@@ -25,6 +25,8 @@ import { ThemeLogoComponent } from './share/component/theme-logo/theme-logo.comp
 import { ThemeToggleComponent } from './share/component/theme-toggle/theme-toggle.component';
 import { ThemeMenuComponent } from './share/theme-menu/theme-menu.component';
 import { FloodingMenuComponent } from './main/flooding-menu/flooding-menu.component';
+import { ProjectImageComponent } from './main/projects/project-image/project-image.component';
+import { LinksToggleComponent } from './main/projects/links-toggle/links-toggle.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { FloodingMenuComponent } from './main/flooding-menu/flooding-menu.compon
     ThemeToggleComponent,
     ThemeMenuComponent,
     FloodingMenuComponent,
+    ProjectImageComponent,
+    LinksToggleComponent,
   ],
   imports: [
     ReactiveFormsModule,

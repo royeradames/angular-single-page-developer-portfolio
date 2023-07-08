@@ -1,0 +1,14 @@
+<picture>
+  <source
+    *ngFor="let source of project.sources"
+    [media]="source.media"
+    [srcset]="source.src"
+  />
+  <img
+    [attr.alt]="project.image.alt"
+    [ngSrc]="project.image.src"
+    [height]="project.image.height"
+    [width]="project.image.width"
+    alt=""
+  />
+</picture>

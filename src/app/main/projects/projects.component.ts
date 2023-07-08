@@ -17,6 +17,9 @@ export class ProjectsComponent {
     this.desktopSize
   );
 
+  get mobileWidth(): boolean {
+    return !this.desktopWidth;
+  }
   constructor(private dataService: DataService, private globalRef: GlobalRef) {
     this.dataService.projectList.subscribe((projectList) => {
       this.projects = projectList;

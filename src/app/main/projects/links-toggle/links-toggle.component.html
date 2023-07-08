@@ -1,0 +1,21 @@
+<button
+  class="col-span-2 flex relative"
+  (mouseover)="hovering[index] = true"
+  (mouseout)="hovering[index] = false"
+  (click)="toggleLinks(index)"
+  *ngIf="desktopWidth"
+>
+  <span class="sr-only">Show links</span>
+  <app-project-image [project]="project"></app-project-image>
+  <project-links
+    *ngIf="desktopWidth"
+    class="absolute gap-14 flex-col place-items-center w-full h-full justify-center sm:max-xl:hidden"
+    [ngClass]="{
+      hidden: isOutside || isUntouched,
+      'xl:flex bg-light-secondary/80 dark:bg-dark-secondary/80 ':
+        hovering[index] || isTouchedList[index]
+    }"
+    [project]="project"
+    [projects]="projects"
+  ></project-links>
+</button>
