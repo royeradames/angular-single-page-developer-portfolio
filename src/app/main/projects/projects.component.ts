@@ -32,9 +32,9 @@ export class ProjectsComponent {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  onResize(event: Event): void {
     this.desktopWidth = this.getDesktopWidth(
-      event.target.innerWidth,
+      (event.target as Window).innerWidth,
       this.desktopSize
     );
   }
