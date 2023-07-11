@@ -27,6 +27,8 @@ import { ThemeMenuComponent } from './share/theme-menu/theme-menu.component';
 import { FloodingMenuComponent } from './main/flooding-menu/flooding-menu.component';
 import { ProjectImageComponent } from './main/projects/project-image/project-image.component';
 import { LinksToggleComponent } from './main/projects/links-toggle/links-toggle.component';
+import { ContentSkipComponent } from './share/component/content-skip/content-skip.component';
+import { ContentReturnComponent } from './share/component/content-return/content-return.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { LinksToggleComponent } from './main/projects/links-toggle/links-toggle.
     FloodingMenuComponent,
     ProjectImageComponent,
     LinksToggleComponent,
+    ContentSkipComponent,
+    ContentReturnComponent,
   ],
   imports: [
     ReactiveFormsModule,
