@@ -52,8 +52,8 @@ export class ContactComponent {
 
     // send the email
     Email.send(emailData)
-      .then((_message: any) => this.contactForm.reset())
-      .catch((_errors: any) => this.markAsTouched(this.contactForm));
+      .then(() => this.contactForm.reset())
+      .catch(() => this.markAsTouched(this.contactForm));
   }
   markAsTouched(group: FormGroup) {
     Object.keys(group.controls).forEach((field) => {
