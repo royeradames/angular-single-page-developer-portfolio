@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { GlobalRef } from '../../share/global-ref/global-ref.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { GlobalRef } from '../../share/global-ref/global-ref.service';
   templateUrl: './flooding-menu.component.html',
   styleUrls: ['./flooding-menu.component.scss'],
 })
-export class FloodingMenuComponent {
+export class FloodingMenuComponent implements OnInit, OnDestroy {
   isScrolled = false;
   isFooterVisible = false;
   constructor(private globalRef: GlobalRef) {}
